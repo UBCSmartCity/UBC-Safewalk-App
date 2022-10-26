@@ -2,11 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import {  Image, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
 import lgo from './assets/favicon.png'
 
-// TO DO:
-// Change the logo in between in place of translink logo 
-// Add background image 
-// Do styling for bottons / text / background image as in figma 
-
 
 export default function App() {
   return (
