@@ -23,7 +23,7 @@ export default function App() {
       <Text style = {{ color: '#000', fontFamily: 'Mulish-Regular', fontSize: 15, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
       <Text style = {{ color: '#000', fontFamily: 'Mulish-Regular', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
       <Text style = {{ color: '#000', fontFamily: 'Mulish-Regular', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> acoompany you to your destination </Text>
-
+    
       <View style={{ flexDirection: "row" }}>
 
     <View style={{ backgroundColor: '#fff' , fontFamily: 'Mulish-Bold', marginTop: 20 , borderRadius: 20, padding: 10}}>
