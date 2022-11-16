@@ -5,6 +5,12 @@ import home from './assets/home.png'
 
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Mulish-Bold': require('./assets/fonts/Mulish-Bold.ttf'),
+    'Mulish-Regular': require('./assets/fonts/Mulish-Regular.ttf'),
+    'Mulish-ExtraLight': require('./assets/fonts/Mulish-ExtraLight.ttf'),
+  });
+
   return (
 
     
