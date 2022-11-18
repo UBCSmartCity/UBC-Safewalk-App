@@ -1,10 +1,22 @@
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
 
+function HomeScreen({ navigation }) { 
 
-function HomeScreen({ navigation }) {
+    const onPressMobileNumberClick = (number) => {
+
+        let phoneNumber = '';
+        if (Platform.OS === 'android') {
+          phoneNumber = `tel:${number}`;
+        } else {
+          phoneNumber = `telprompt:${number}`;
+        }
+  
+        Linking.openURL(phoneNumber);
+     }
+     
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <TouchableOpacity
+        <TouchableOpacity  onPress={() => { onPressMobileNumberClick("6048225355") }}
             style={{
                 borderWidth:1,
                 borderColor:'#FF6600',
@@ -18,14 +30,12 @@ function HomeScreen({ navigation }) {
             >
             <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 0}}>  CALL  </Text>
             <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 2}}> SAFEWALK  </Text>
-          
-          
             </TouchableOpacity>
 
         <Text style = {{ color: '#000', fontSize: 15, marginTop: 15,  textAlign: "center" }}> In the case where accompaniment is {'\n'}  needed, press this button so we can attend {'\n'}  to your location immediately   </Text>
         
         
-        <TouchableOpacity
+        <TouchableOpacity  onPress={() => { onPressMobileNumberClick("911") }}
             style={{
                 borderWidth:1,
                 borderColor:'#FE2633',
