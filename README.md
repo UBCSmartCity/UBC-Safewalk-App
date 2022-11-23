@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# SmartCity-backend
-Smart City Back End code
-=======
 # UBC-Safewalk-App
 
 This year we are planning to work on UBC SafeWalk App 
