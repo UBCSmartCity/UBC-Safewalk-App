@@ -1,0 +1,159 @@
+"""
+To Run:
+source ~/desktop/project/venv/bin/activate 
+flask run
+"""
+
+#"""
+from flask import Flask, render_template, request, url_for, redirect
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+
+# Added lib for API implementation
+import datetime   # This will be needed later
+import os
+from dotenv import load_dotenv
+# Import the `pprint` function to print nested data:
+from pprint import pprint
+import bson # <- Put this line near the start of the file if you prefer.
+
+from flask import Flask
+#Certificate needed to access the MongoDB
+import certifi
+
+
+app = Flask(__name__)
+
+#client = MongoClient('localhost', 27017)
+
+# REST API implementation
+# Load config from a .env file:
+load_dotenv()
+MONGODB_URI = os.environ['MONGODB_URI']
+
+# Connect to your MongoDB cluster:
+client = MongoClient(MONGODB_URI)
+client = MongoClient("mongodb+srv://sonozaki:sonozaki@cluster0.dnwfcvc.mongodb.net/?retryWrites=true&w=majority", tlsCAFile=certifi.where())
+
+# List all the databases in the cluster:
+for db_info in client.list_database_names():
+   print(db_info)
+
+
+#"""
+
+
+
+#"""
+
+# Get a reference to the 'sample_mflix' database:
+db = client['sample_mflix']
+
+# List all the collections in 'sample_mflix':
+collections = db.list_collection_names()
+# for collection in collections:
+#   print(collection)
+
+# Get a reference to the 'movies' collection:
+movies = db['movies']
+
+# Get the document with the title 'Blacksmith Scene':
+pprint(movies.find_one({'title': 'Blacksmith Scene'}))
+
+# Insert a document for the movie 'Parasite':
+insert_result = movies.insert_one({
+      "title": "Parasite",
+      "year": 2020,
+      "plot": "A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks. "
+      "But their easy life gets complicated when their deception is threatened with exposure.",
+      #"released": datetime(2020, 2, 7, 0, 0, 0),
+   })
+
+# Save the inserted_id of the document you just created:
+parasite_id = insert_result.inserted_id
+print("_id of inserted document: {parasite_id}".format(parasite_id=parasite_id))
+
+# Look up the document you just created in the collection:
+print(movies.find_one({'_id': bson.ObjectId(parasite_id)}))
+
+# Update the document with the correct year:
+update_result = movies.update_one({ '_id': parasite_id }, {
+   '$set': {"year": 2019}
+})
+
+# Print out the updated record to make sure it's correct:
+pprint(movies.find_one({'_id': ObjectId(parasite_id)}))
+
+# Update *all* the Parasite movie docs to the correct year:
+update_result = movies.update_many({"title": "Parasite"}, {"$set": {"year": 2019}})
+
+#"""
+
+
+
+
+
+
+"""
+db = client.flask_db
+todos = db.todos
+
+@app.route('/', methods=('GET', 'POST'))
+def index():
+    if request.method=='POST':
+        content = request.form['content']
+        degree = request.form['degree']
+        todos.insert_one({'content': content, 'degree': degree})
+        return redirect(url_for('index'))
+
+    all_todos = todos.find()
+    return render_template('index.html', todos=all_todos)
+    
+@app.post('/<id>/delete/')
+def delete(id):
+    todos.delete_one({"_id": ObjectId(id)})
+    return redirect(url_for('index'))
+"""
+
+
+
+"""
+from flask import Flask
+from flask_swagger_ui import get_swaggerui_blueprint
+
+app = Flask(__name__)
+
+
+SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
+API_URL = 'http://petstore.swagger.io/v2/swagger.json'  # Our API url (can of course be a local resource)
+
+# Call factory function to create our blueprint
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,  # Swagger UI static files will be mapped to '{SWAGGER_URL}/dist/'
+    API_URL,
+    config={  # Swagger UI config overrides
+        'app_name': "Test application"
+    },
+    # oauth_config={  # OAuth config. See https://github.com/swagger-api/swagger-ui#oauth2-configuration .
+    #    'clientId': "your-client-id",
+    #    'clientSecret': "your-client-secret-if-required",
+    #    'realm': "your-realms",
+    #    'appName': "your-app-name",
+    #    'scopeSeparator': " ",
+    #    'additionalQueryStringParams': {'test': "hello"}
+    # }
+)
+
+app.register_blueprint(swaggerui_blueprint)
+
+if __name__ == '__main__':
+    app.run()
+"""
+
+
+#"""
+if __name__ == '__main__':
+    app.run(debug=True)
+
+#"""
+
