@@ -50,6 +50,13 @@ function HomeScreen({ navigation }) {
             >
             <Text style = {{ color: '#FFF', fontSize: 20, marginTop: 0}}>  Emergency  </Text>
             </TouchableOpacity>
+
+            <View style={{borderWidth:'1.5', paddingBottom: 5, paddingTop: 10, paddingLeft: 5, paddingRight: 5, borderRadius: '10', margin:10, marginTop:50 }}>
+            <Text style={styles.text3}> ATTENTION! </Text>
+            <Text style={styles.paragraph}>
+            {`In the case of an emergency, rapidly tap the EMERGENCY button 3 times to initate a response. SafeWalk will dispatch personnel to your location immediately and notify emergency services.`}
+            </Text>
+            </View>
         
         <View style = {{marginTop: 20}}>
         <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
@@ -57,5 +64,26 @@ function HomeScreen({ navigation }) {
       </View>
     );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  
+  text3: 
+  {
+    color: '#FE2633', 
+    fontSize: 15, 
+    fontWeight: 'bold', 
+    alignItems: 'left',
+    margin: 1
+  },
+  paragraph: {
+    margin: 4,
+    fontSize: 15,
+    textAlign: 'justify',
+  }
+});
+
 
 export default HomeScreen;
