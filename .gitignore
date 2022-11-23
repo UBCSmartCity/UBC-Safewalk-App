@@ -1,0 +1,6 @@
+/backend/.env
+/backend/.envrc
+
+#Any .env file 
+*.env
+*.envrc
