@@ -5,6 +5,14 @@ Progress:
 Created Simple Loading page 
 
 To dos: 
-Replace the translink logo with safewalk logo created by design team
-Add background image 
-Do styling for bottons / text / background image as in figma 
+Do styling for text 
+Complete HomeScreen 
+
+
+Make sure to install these dependencies before you run expo  <br>
+
+Navigation: <br>
+yarn add @react-navigation/native <br>
+npx expo install react-native-screens react-native-safe-area-context <br>
+yarn add @react-navigation/native-stack <br>
+
