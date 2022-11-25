@@ -5,6 +5,7 @@ source ~/desktop/project/venv/bin/activate
 # For the API tutorial
 source ~/desktop/project/venvCocktail/bin/activate 
 
+source ./venvCocktail/bin/activate 
 To Run:
 
 1) Visit https://www.mongodb.com/developer/languages/python/flask-python-mongodb/
@@ -41,8 +42,8 @@ import certifi
 
 from pymongo.collection import Collection, ReturnDocument
 
-import flask
-from flask import Flask, request, url_for, jsonify
+
+from flask import request, url_for, jsonify
 from flask_pymongo import PyMongo
 from pymongo.errors import DuplicateKeyError
 
