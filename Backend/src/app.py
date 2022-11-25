@@ -1,10 +1,25 @@
 """
-To Run:
+For my personal use:
 # For the simple MongoDB tutorial
 source ~/desktop/project/venv/bin/activate 
 # For the API tutorial
 source ~/desktop/project/venvCocktail/bin/activate 
-flask run
+
+To Run:
+
+1) Visit https://www.mongodb.com/developer/languages/python/flask-python-mongodb/
+2) setup necessary virtualenv and dependencies by using below
+pip install -e .
+
+3) create a file .envrc in the backend directory and insert the line below
+export MONGO_URI = 'mongodb+srv://sonozaki:sonozaki@cluster0.dnwfcvc.mongodb.net/cocktailapi?retryWrites=true&w=majority'
+
+4) You dont need to the code below
+mongoimport --uri "$MONGO_URI" --file ./recipes.json
+
+5) run the code using 
+FLASK_DEBUG=true FLASK_APP=cocktailapi flask run
+
 """
 
 #"""
