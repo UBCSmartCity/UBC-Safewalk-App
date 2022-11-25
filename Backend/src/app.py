@@ -5,7 +5,7 @@ source ~/desktop/project/venv/bin/activate
 # For the API tutorial
 source ~/desktop/project/venvCocktail/bin/activate 
 
-source ./venvCocktail/bin/activate 
+source backend/bin/activate 
 To Run:
 
 1) Visit https://www.mongodb.com/developer/languages/python/flask-python-mongodb/
