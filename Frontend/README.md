@@ -16,3 +16,4 @@ yarn add @react-navigation/native <br>
 npx expo install react-native-screens react-native-safe-area-context <br>
 yarn add @react-navigation/native-stack <br>
 
+npm install react-native-paper
