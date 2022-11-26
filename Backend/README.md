@@ -13,3 +13,10 @@ To run the code
 
 Backend 
 - Support for POST and GET methods between flask and mongoDB
+
+To run the login system:
+1) Create a virtual environment and activate 
+2) If windows, make sure you are in root and run the following code ```python -m flask run```  
+3) If you are using mac: ```FLASK_APP=app.py FLASK_ENV=development flask run```
+4) Go to your localhost:5000 to see the website 
+5) You can use MongoDBCompass to track the changes made in database (user_login_system) 
