@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet , SafeAreaView, VirtualizedList } from 'react-native';
 import Constants from 'expo-constants';
 
 
@@ -9,6 +9,18 @@ import { SelectList } from 'react-native-dropdown-select-list';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
 
+const getItem = (_data, index) => ({
+    id: Math.random().toString(12).substring(0),
+    title: `Person ${index + 1}`,
+  });
+  
+  const getItemCount = _data => 50;
+  
+  const Item = ({title}) => (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
 export default function Supervisor() {
   const [selected, setSelected] = React.useState("");
   
@@ -23,7 +35,7 @@ export default function Supervisor() {
     <View style={styles.container}>
       
       <Text style={styles.header}>
-        Walkp Requests
+        Walk Requests
       </Text>
        <SelectList 
         setSelected={(val) => setSelected(val)} 
@@ -31,10 +43,19 @@ export default function Supervisor() {
         save="value"
       />
       
+    <SafeAreaView style={styles.container}>
+    
+    <VirtualizedList
+        initialNumToRender={4}
+        renderItem={({item}) => 
+        <Item title={item.title} />
+        }
+        keyExtractor={item => item.id}
+        getItemCount={getItemCount}
+        getItem={getItem}
+    />
 
-      <Text>
-        Checking this
-      </Text>
+    </SafeAreaView>
       
     </View>
   );
@@ -54,10 +75,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  item: {
+    backgroundColor: '#f9c2ff',
+    height: 80,
+    justifyContent: 'center',
+    marginVertical: 8,
+    marginHorizontal: 16,
+    padding: 20,
+  },
   header : {
     fontSize: 24,
     color: '#FF6600',
-    marginLeft: "49px",
-    marginRight: "131px"
+    marginLeft: "49%"
   }
 });
