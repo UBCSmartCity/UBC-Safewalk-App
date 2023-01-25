@@ -28,8 +28,8 @@ function HomeScreen({ navigation }) {
                 borderRadius:100,
                 }}
             >
-            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 0}}>  CALL  </Text>
-            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 2}}> SAFEWALK  </Text>
+            <Text style = {{ color: '#FFF', fontSize: '25%', fontWeight: 'bold', marginTop: 0}}>  CALL  </Text>
+            <Text style = {{ color: '#FFF', fontSize: '25%', fontWeight: 'bold', marginTop: 2}}> SAFEWALK  </Text>
             </TouchableOpacity>
 
         <Text style = {{ color: '#000', fontSize: 15, marginTop: 15,  textAlign: "center" }}> In the case where accompaniment is {'\n'}  needed, press this button so we can attend {'\n'}  to your location immediately   </Text>
