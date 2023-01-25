@@ -60,6 +60,7 @@ function HomeScreen({ navigation }) {
         
         <View style = {{marginTop: 20}}>
         <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
+        <Button title="Go to Navigation" onPress={() => navigation.navigate('NavScreen')} />
         </View>
       </View>
     );
