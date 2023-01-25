@@ -8,6 +8,7 @@ import { View } from 'react-native';
 import navScreen from './navScreen.js';
 
 
+
 const Stack = createNativeStackNavigator();
 
 
