@@ -6,7 +6,7 @@ import HomeScreen from './home.js';
 import { Button, Menu, Divider, Provider,List } from 'react-native-paper';
 import { View } from 'react-native';
 import navScreen from './navScreen.js';
-
+import supervisor from './supervisor.js'
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +35,10 @@ const MyComponent = () => {
         <Stack.Screen 
           name="NavScreen" 
           component={navScreen} 
+        />
+        <Stack.Screen 
+          name="Supervisor" 
+          component={supervisor} 
         />
       </Stack.Navigator>
     </NavigationContainer>
