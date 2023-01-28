@@ -3,11 +3,15 @@ import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpac
 import lgo from './assets/lg.png'
 import home from './assets/home.png'
 
+
+
 function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
       
+      <StatusBar style="auto" />
+
       <ImageBackground source={home} style={styles.image}>
 
       <Text style = {{ color: '#0047AB', fontSize: 45, fontWeight: 'bold', marginTop: 10}}> SafeWalk </Text>
