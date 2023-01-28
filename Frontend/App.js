@@ -14,6 +14,7 @@ import { useState } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Supervisor from './supervisor.js';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -37,6 +38,7 @@ return (
 <Drawer.Screen name="Home" component={HomeScreen} />
 <Drawer.Screen name="Login" component={LoginScreen} />
 <Drawer.Screen name="Settings" component={navScreen} />
+<Drawer.Screen name="Supervisor" component={Supervisor} />
 </Drawer.Navigator>
 );
 };
