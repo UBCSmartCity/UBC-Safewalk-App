@@ -65,4 +65,3 @@ margin: 10,
 });
 
 export default App;
-
