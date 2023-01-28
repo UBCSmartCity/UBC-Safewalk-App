@@ -34,8 +34,8 @@ export default function Supervisor() {
       {key:'4', value:'All Time'},
   ]
 
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  // const [isEnabled, setIsEnabled] = useState(false);
+  // const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   return (
     <View style={styles.container}>
@@ -51,7 +51,7 @@ export default function Supervisor() {
       
     <SafeAreaView style={styles.container}>
     
-    <View style={{ flexDirection: "row"}}>
+    {/* <View style={{ flexDirection: "row"}}>
       <Text style={{}}>
           Unassigned
       </Text>
@@ -65,7 +65,7 @@ export default function Supervisor() {
       <Text style={{}}>
         Assigned
       </Text>
-    </View>
+    </View> */}
     
     <VirtualizedList
         initialNumToRender={4}
