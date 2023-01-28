@@ -1,6 +1,6 @@
 // import * as React from 'react';
 import React, {useState} from 'react';
-import { Text, View, StyleSheet , SafeAreaView, VirtualizedList, Switch} from 'react-native';
+import { Text, View, StyleSheet , SafeAreaView,TouchableOpacity, VirtualizedList, Switch} from 'react-native';
 import Constants from 'expo-constants';
 
 
@@ -48,7 +48,50 @@ export default function Supervisor() {
         data={data} 
         save="value"
       />
-      
+    
+
+<View style={{ flexDirection: "row" }}>
+      <TouchableOpacity 
+      style={{backgroundColor: '#FFFFFF', 
+              padding: 15,
+              left:10,
+              marginTop: 10,
+              borderColor: '#002145',
+              borderRadius:'10',
+              borderWidth:'2',
+              padding: 16,
+              paddingHorizontal:55,
+              alignItems: 'center',
+              width: '48%'
+              }}
+              onPress={()=>{return}}> 
+        <View style = {styles.button1}>
+          <Text style = {styles.text1}>Unassigned</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+      style={{
+              backgroundColor:'#FFFFFF', 
+              padding: 15,
+              right:-25,
+              marginTop: 10,
+              borderColor: '#002145',
+              borderRadius:'10',
+              borderWidth:'2',
+              padding: 16,
+              paddingHorizontal:45,
+              alignItems: 'center',
+              width: '45%'
+              }}
+              onPress={()=>{return}}>
+        <View style = {styles.button2}>
+          <Text style = {styles.text2}>Assigned</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+
+
     <SafeAreaView style={styles.container}>
     
     {/* <View style={{ flexDirection: "row"}}>
