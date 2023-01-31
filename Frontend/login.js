@@ -3,11 +3,15 @@ import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpac
 import lgo from './assets/lg.png'
 import home from './assets/home.png'
 
+
+
 function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
       
+      <StatusBar style="auto" />
+
       <ImageBackground source={home} style={styles.image}>
 
       <Text style = {{ color: '#0047AB', fontSize: 45, fontWeight: 'bold', marginTop: 10}}> SafeWalk </Text>
@@ -16,7 +20,6 @@ function LoginScreen({ navigation }) {
       <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
       <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
       <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> acoompany you to your destination </Text>
-
       <View style={{ flexDirection: "row" }}>
 
     {/* presing login button directs you to the home screen */}
@@ -31,15 +34,14 @@ function LoginScreen({ navigation }) {
           <Text style = {styles.text2}>REGISTER</Text>
         </View>
       </TouchableOpacity>
-
-
-
     </View>
-
+    <View>
+    <TouchableOpacity onPress={() => navigation.navigate('Supervisor')}>
+    <Text style = {{ color: '#0047AB', fontSize: 15, fontWeight: 'bold',marginTop:20}}> Employee Login </Text>
+    </TouchableOpacity>
+    </View>
     </ImageBackground>
-      
       <StatusBar style="auto" />
-    
     </View>
 
   );
@@ -82,9 +84,10 @@ const styles = StyleSheet.create({
   },
   button1:
   {
-    position:'absolute',
-    bottom:-140,
-    left:-187,
+    // position:'absolute',
+    // bottom:-80,
+    left:-10,
+    marginTop: 10,
     backgroundColor: '#FFFFFF',
     borderColor: '#002145',
     borderRadius:'10',
@@ -96,9 +99,10 @@ const styles = StyleSheet.create({
   },
   button2:
   {
-    position:'absolute',
-    bottom:-140,
-    right:-189,
+    // position:'absolute',
+    // bottom:-80,
+    right:-10,
+    marginTop: 10,
     backgroundColor: '#002145',
     borderColor: '#002145',
     borderRadius:'10',

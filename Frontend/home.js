@@ -28,7 +28,7 @@ function HomeScreen({ navigation }) {
                 borderRadius:100,
                 }}
             >
-            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 0}}>  CALL  </Text>
+            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 0}}>  REQUEST  </Text>
             <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 2}}> SAFEWALK  </Text>
             </TouchableOpacity>
 
@@ -59,8 +59,6 @@ function HomeScreen({ navigation }) {
             </View>
         
         <View style = {{marginTop: 20}}>
-        <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-        <Button title="Go to Navigation" onPress={() => navigation.navigate('NavScreen')} />
         </View>
       </View>
     );

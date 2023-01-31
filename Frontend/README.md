@@ -3,7 +3,7 @@ Uses Expo CLI
 
 Progress: 
 Created Simple Loading page 
-
+hello
 To dos: 
 Do styling for text 
 Complete HomeScreen 
