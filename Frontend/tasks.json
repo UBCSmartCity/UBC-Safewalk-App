@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Hailey",
+        "startloc":"AMS Nest",
+        "endloc":"Orchard Commons",
+        "dist":"1.5km",
+        "rectime":"20:45",
+        "id":"0"
+    },
+    {
+        "name":"Braxton",
+        "startloc":"Life Building",
+        "endloc":"Chemical and Biological Engineering Building",
+        "dist":"1.3km",
+        "rectime":"21:08",
+        "id":"1"
+    },
+    {
+        "name":"Braxton",
+        "startloc":"Life Building",
+        "endloc":"Chemical and Biological Engineering Building",
+        "dist":"1.3km",
+        "rectime":"21:08",
+         "id":"1"
+    }  
+]

@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import { Text, View, StyleSheet , SafeAreaView, VirtualizedList, Switch} from 'react-native';
 import Constants from 'expo-constants';
+import tasksjson from './tasks.json';
 
 
 // Need to add dependency 
@@ -10,13 +11,6 @@ import { SelectList } from 'react-native-dropdown-select-list';
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
-
-  const getItem = (_data, index) => ({
-    id: Math.random().toString(12).substring(0),
-    title: `Person ${index + 1}`,
-  });
-  
-  const getItemCount = _data => 50;
   
   const Item = ({title}) => (
     <View style={styles.item}>
@@ -26,6 +20,10 @@ import { Card } from 'react-native-paper';
 export default function Supervisor() {
   const [selected, setSelected] = React.useState("");
   
+  const myItemSeparator = () => {
+    return <View style={{ height: 1, backgroundColor: "grey",marginHorizontal:10}} />;
+    };
+
   const data = [
       {key:'1', value:'Select', disabled:true},
       {key:'1', value:'Today',},
@@ -67,14 +65,19 @@ export default function Supervisor() {
       </Text>
     </View>
     
-    <VirtualizedList
-        initialNumToRender={4}
-        renderItem={({item}) => 
-        <Item title={item.title} />
-        }
-        keyExtractor={item => item.id}
-        getItemCount={getItemCount}
-        getItem={getItem}
+    <FlatList
+      data={tasksjson}
+      renderItem={({ item }) => 
+        <View>
+          <Text style={styles.item}>{item.name}</Text>
+          <Text style={styles.item}>{item.startloc}</Text>
+          <Text style={styles.item}>{item.endloc}</Text>
+          <Text style={styles.item}>{item.dist}</Text>
+          <Text style={styles.item}>{item.rectime}</Text>
+        </View>
+      }
+      keyExtractor={(item) => item.id}
+      ItemSeparatorComponent={myItemSeparator}
     />
 
     </SafeAreaView>
