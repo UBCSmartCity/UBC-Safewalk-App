@@ -18,7 +18,6 @@ function LoginScreen({ navigation }) {
       <Text style = {{ color: '#002145', fontSize: 45, fontWeight: 'bold', marginTop: -150}}> SafeWalk </Text>
       <Image source={lgo} style={styles.image1}></Image>
       <Text style = {{ color: '#0047AB', fontSize: 20, fontWeight: 'bold',marginTop:350}}> Safety, Security and Peace of Mind </Text>
-
       <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
       <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
       <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> accompany you to your destination </Text>
@@ -37,14 +36,15 @@ function LoginScreen({ navigation }) {
           <Text style = {styles.text2}>Employee Login</Text>
         </View>
       </TouchableOpacity>
+
+
+
     </View>
-    <View>
-    <TouchableOpacity onPress={() => navigation.navigate('Supervisor')}>
-    <Text style = {{ color: '#0047AB', fontSize: 15, fontWeight: 'bold',marginTop:20}}> Employee Login </Text>
-    </TouchableOpacity>
-    </View>
+
     </ImageBackground>
+      
       <StatusBar style="auto" />
+    
     </View>
 
   );
@@ -89,12 +89,10 @@ const styles = StyleSheet.create({
   },
   button1:
   {
-
-    // position:'absolute',
-    // bottom:-80,
-    left:-10,
-    marginTop: 10,
-    backgroundColor: '#FFFFFF',
+    position:'absolute',
+    bottom:-160,
+    left:-90,
+    backgroundColor: '#002145',
     borderColor: '#002145',
     borderRadius:'10',
     borderWidth:'2',
@@ -105,11 +103,9 @@ const styles = StyleSheet.create({
   },
   button2:
   {
-
-    // position:'absolute',
-    // bottom:-80,
-    right:-10,
-    marginTop: 10,
+    position:'absolute',
+    bottom:-220,
+    right:-95,
     borderColor: '#002145',
     padding: 16,
     paddingHorizontal:45,
