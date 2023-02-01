@@ -14,6 +14,9 @@ import { useState } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import NavScreen from './navScreen.js';
+import StudentLogin from './studentlogin.js';
+import EmployeeLogin from './employeelogin.js';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -33,10 +36,12 @@ return (
 
 const DrawerNavigator = () => {
 return (
-<Drawer.Navigator useLegacyImplementation={true}>
+<Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
 <Drawer.Screen name="Home" component={HomeScreen} />
-<Drawer.Screen name="Login" component={LoginScreen} />
-<Drawer.Screen name="Settings" component={navScreen} />
+<Drawer.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+<Drawer.Screen name="Settings" component={NavScreen} />
+<Drawer.Screen name="Student" component={StudentLogin} />
+<Drawer.Screen name="Employee" component={EmployeeLogin} />
 </Drawer.Navigator>
 );
 };
@@ -44,7 +49,8 @@ return (
 const App = () => {
 return (
   <NavigationContainer>
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='Login'>
+    
     <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} options={{ headerShown: false }} />
     </Stack.Navigator>
   </NavigationContainer>

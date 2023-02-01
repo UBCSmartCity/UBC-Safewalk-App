@@ -60,7 +60,7 @@ function HomeScreen({ navigation }) {
         
         <View style = {{marginTop: 20}}>
         <Button title="Go to Login" onPress={() => navigation.navigate('Login')} />
-        <Button title="Go to Navigation" onPress={() => navigation.navigate('NavScreen')} />
+        <Button title="Go to Navigation" onPress={() => navigation.navigate('Settings')} />
         
         <Button title="Go to Supervisor Screen (this needs to be moved to login page)" onPress={() => navigation.navigate('Supervisor')} />
         </View>
