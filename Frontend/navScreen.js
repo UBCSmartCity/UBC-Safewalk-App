@@ -5,7 +5,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import HomeScreen from './home';
 import profile from './assets/profile.png'
 
-function navScreen({ navigation }) {
+function NavScreen({ navigation }) {
 
     return (
       <View style={styles.container}>
@@ -98,4 +98,4 @@ function navScreen({ navigation }) {
     }
   });
   
-  export default navScreen;
+  export default NavScreen;

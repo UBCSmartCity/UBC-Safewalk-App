@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
 import lgo from './assets/lg.png'
 import home from './assets/home.png'
+import StudentLogin from './studentlogin';
 
 
 
@@ -14,24 +15,26 @@ function LoginScreen({ navigation }) {
 
       <ImageBackground source={home} style={styles.image}>
 
-      <Text style = {{ color: '#0047AB', fontSize: 45, fontWeight: 'bold', marginTop: 10}}> SafeWalk </Text>
+      <Text style = {{ color: '#002145', fontSize: 45, fontWeight: 'bold', marginTop: -150}}> SafeWalk </Text>
       <Image source={lgo} style={styles.image1}></Image>
       <Text style = {{ color: '#0047AB', fontSize: 20, fontWeight: 'bold',marginTop:350}}> Safety, Security and Peace of Mind </Text>
-      <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
-      <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
-      <Text style = {{ color: '#000', fontSize: 15, fontWeight: 'normal', marginTop: 3}}> acoompany you to your destination </Text>
+
+      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
+      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
+      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> accompany you to your destination </Text>
+
       <View style={{ flexDirection: "row" }}>
 
     {/* presing login button directs you to the home screen */}
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+      <TouchableOpacity onPress={() => navigation.navigate('Student')}> 
         <View style = {styles.button1}>
-          <Text style = {styles.text1}>LOG IN</Text>
+          <Text style = {styles.text1}>USERS</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Employee')}>
         <View style = {styles.button2}>
-          <Text style = {styles.text2}>REGISTER</Text>
+          <Text style = {styles.text2}>Employee Login</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -64,26 +67,29 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
     alignItems: 'center',
+    height: '50%',
+    width:'50%',
     position: 'absolute',
-    top: 300
+    top: 120
 
   },
   text1: 
-  {
-    color: '#002145', 
-    fontSize: 20, 
-    fontWeight: 'bold', 
-    alignItems: 'center'
-  },
-  text2: 
   {
     color: '#FFFFFF', 
     fontSize: 20, 
     fontWeight: 'bold', 
     alignItems: 'center'
   },
+  text2: 
+  {
+    color: '#1D1E21', 
+    fontSize: 15, 
+    fontWeight: 'italics', 
+    alignItems: 'center'
+  },
   button1:
   {
+
     // position:'absolute',
     // bottom:-80,
     left:-10,
@@ -99,14 +105,12 @@ const styles = StyleSheet.create({
   },
   button2:
   {
+
     // position:'absolute',
     // bottom:-80,
     right:-10,
     marginTop: 10,
-    backgroundColor: '#002145',
     borderColor: '#002145',
-    borderRadius:'10',
-    borderWidth:'2',
     padding: 16,
     paddingHorizontal:45,
     alignItems: 'center'
