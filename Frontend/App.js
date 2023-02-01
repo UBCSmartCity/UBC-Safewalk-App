@@ -17,6 +17,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import NavScreen from './navScreen.js';
 import StudentLogin from './studentlogin.js';
 import EmployeeLogin from './employeelogin.js';
+import Supervisor from './supervisor.js';
+
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -42,6 +44,7 @@ return (
 <Drawer.Screen name="Settings" component={NavScreen} />
 <Drawer.Screen name="Student" component={StudentLogin} />
 <Drawer.Screen name="Employee" component={EmployeeLogin} />
+<Drawer.Screen name="Supervisor" component={Supervisor} />
 </Drawer.Navigator>
 );
 };
