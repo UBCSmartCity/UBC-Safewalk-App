@@ -5,7 +5,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import HomeScreen from './home';
 import profile from './assets/profile.png'
 
-function navScreen({ navigation }) {
+function NavScreen({ navigation }) {
 
     return (
       <View style={styles.container}>
@@ -30,15 +30,15 @@ function navScreen({ navigation }) {
             <View style={styles.button1}>
                 <AntDesign name="appstore-o" size={30} color="white" />
             </View> 
-            <Text style = {styles.text1}>Dashboard</Text>
+            <Text style = {styles.text1}>Home</Text>
 
         </TouchableOpacity>
   
         <TouchableOpacity onPress={() => navigation.navigate('Login')}> 
             <View style={styles.button3}>
-                <AntDesign name="setting" size={30} color="white" />
+                <AntDesign name="logout" size={30} color="red" />
             </View> 
-            <Text style = {styles.text2}>App Settings</Text>
+            <Text style = {styles.text2}>Log Out</Text>
  
         </TouchableOpacity>
   
@@ -98,4 +98,4 @@ function navScreen({ navigation }) {
     }
   });
   
-  export default navScreen;
+  export default NavScreen;

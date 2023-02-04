@@ -1,6 +1,6 @@
 // import * as React from 'react';
 import React, {useState} from 'react';
-import { Text, View, StyleSheet , SafeAreaView, VirtualizedList, Switch} from 'react-native';
+import { Text, View, StyleSheet , SafeAreaView,TouchableOpacity, VirtualizedList, Switch} from 'react-native';
 import Constants from 'expo-constants';
 import tasksjson from './tasks.json';
 
@@ -32,8 +32,8 @@ export default function Supervisor() {
       {key:'4', value:'All Time'},
   ]
 
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  // const [isEnabled, setIsEnabled] = useState(false);
+  // const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   return (
     <View style={styles.container}>
@@ -46,10 +46,53 @@ export default function Supervisor() {
         data={data} 
         save="value"
       />
-      
+    
+
+<View style={{ flexDirection: "row" }}>
+      <TouchableOpacity 
+      style={{backgroundColor: '#FFFFFF', 
+              padding: 15,
+              left:10,
+              marginTop: 10,
+              borderColor: '#002145',
+              borderRadius:'10',
+              borderWidth:'2',
+              padding: 16,
+              paddingHorizontal:55,
+              alignItems: 'center',
+              width: '48%'
+              }}
+              onPress={()=>{return}}> 
+        <View style = {styles.button1}>
+          <Text style = {styles.text1}>Unassigned</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+      style={{
+              backgroundColor:'#FFFFFF', 
+              padding: 15,
+              right:-25,
+              marginTop: 10,
+              borderColor: '#002145',
+              borderRadius:'10',
+              borderWidth:'2',
+              padding: 16,
+              paddingHorizontal:45,
+              alignItems: 'center',
+              width: '45%'
+              }}
+              onPress={()=>{return}}>
+        <View style = {styles.button2}>
+          <Text style = {styles.text2}>Assigned</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+
+
     <SafeAreaView style={styles.container}>
     
-    <View style={{ flexDirection: "row"}}>
+    {/* <View style={{ flexDirection: "row"}}>
       <Text style={{}}>
           Unassigned
       </Text>
@@ -63,7 +106,7 @@ export default function Supervisor() {
       <Text style={{}}>
         Assigned
       </Text>
-    </View>
+    </View> */}
     
     <FlatList
       data={tasksjson}
