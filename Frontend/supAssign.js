@@ -1,4 +1,5 @@
-import {  SafeAreaView, StyleSheet, Text,  CheckBox, TouchableOpacity, View , Button} from 'react-native';
+import {  SafeAreaView, StyleSheet, Text, TouchableOpacity, View , Button} from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 import { Ionicons } from '@expo/vector-icons';
 
 function supAssign({ navigation }) {      

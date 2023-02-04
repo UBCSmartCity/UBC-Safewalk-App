@@ -18,6 +18,7 @@ import NavScreen from './navScreen.js';
 import StudentLogin from './studentlogin.js';
 import EmployeeLogin from './employeelogin.js';
 import Supervisor from './supervisor.js';
+import supAssign from './supAssign.js';
 
 
 const Stack = createStackNavigator();
@@ -45,6 +46,7 @@ return (
 <Drawer.Screen name="Student" component={StudentLogin} />
 <Drawer.Screen name="Employee" component={EmployeeLogin} />
 <Drawer.Screen name="Supervisor" component={Supervisor} />
+<Drawer.Screen name="supAssign" component={supAssign} />
 </Drawer.Navigator>
 );
 };
