@@ -1,8 +1,5 @@
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import HomeScreen from './home';
 import profile from './assets/profile.png'
 
 function NavScreen({ navigation }) {
