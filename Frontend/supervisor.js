@@ -1,6 +1,6 @@
 // import * as React from 'react';
 import React, {useState} from 'react';
-import { Text, View, StyleSheet , SafeAreaView,TouchableOpacity, VirtualizedList, Switch} from 'react-native';
+import { Text, View, StyleSheet , SafeAreaView,TouchableOpacity, VirtualizedList, Switch, FlatList} from 'react-native';
 import Constants from 'expo-constants';
 import tasksjson from './tasks.json';
 

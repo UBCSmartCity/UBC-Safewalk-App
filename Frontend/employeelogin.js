@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
-import lgo from './assets/lg.png'
 import home from './assets/home.png'
 import { TextInput } from 'react-native-paper';
 import React, { useState } from 'react';
