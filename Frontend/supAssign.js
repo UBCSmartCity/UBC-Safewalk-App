@@ -5,7 +5,6 @@ import { Ionicons } from '@expo/vector-icons';
 function supAssign({ navigation }) {      
     return (
         <View style={{ flex: 1, alignItems: 'left' }}>
-            <Ionicons name="chevron-back" size={30} color="black" style={{position: 'absolute', left: 2}}/>
             <Text style={styles.title1}> Assign Safewalker </Text>
           <Text style={styles.paragraph}>
               {`Assign a safewalker to accompany the selected user for their upcoming walk. Safewalkers that are already on a task will appear unavailable.`}
