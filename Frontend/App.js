@@ -19,7 +19,7 @@ import StudentLogin from './studentlogin.js';
 import EmployeeLogin from './employeelogin.js';
 import Supervisor from './supervisor.js';
 import supAssign from './supAssign.js';
-
+import verification from './verification.js';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -47,6 +47,7 @@ return (
 <Drawer.Screen name="Employee" component={EmployeeLogin} />
 <Drawer.Screen name="Supervisor" component={Supervisor} />
 <Drawer.Screen name="supAssign" component={supAssign} />
+<Drawer.Screen name="verification" component={verification} />
 </Drawer.Navigator>
 );
 };
