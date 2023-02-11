@@ -111,12 +111,12 @@ export default function Supervisor() {
     <FlatList
       data={tasksjson}
       renderItem={({ item }) => 
-        <View>
-          <Text style={styles.item}>{item.name}</Text>
-          <Text style={styles.item}>{item.startloc}</Text>
-          <Text style={styles.item}>{item.endloc}</Text>
-          <Text style={styles.item}>{item.dist}</Text>
-          <Text style={styles.item}>{item.rectime}</Text>
+        <View  style={styles.item}>
+          <Text style={styles.text}>{item.name}</Text>
+          <Text >{item.startloc}</Text>
+          <Text >{item.endloc}</Text>
+          <Text >{item.dist}</Text>
+          <Text >{item.rectime}</Text>
         </View>
       }
       keyExtractor={(item) => item.id}
@@ -160,5 +160,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#FF6600',
     marginLeft: "49%"
+  },
+  text : {
+    fontSize: 12,
+    color: 'white'
   }
 });
