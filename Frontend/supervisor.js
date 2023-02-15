@@ -11,6 +11,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
+import { color } from 'react-native-reanimated';
   
   const Item = ({title}) => (
     <View style={styles.item}>
@@ -48,19 +49,18 @@ export default function Supervisor() {
       />
     
 
-<View style={{ flexDirection: "row" }}>
+<View style={{ flexDirection: "row" , width:"100%" , justifyContent:"space-evenly",display:"flex",alignContent:"flex-start"}}>
       <TouchableOpacity 
       style={{backgroundColor: '#FFFFFF', 
               padding: 15,
-              left:10,
               marginTop: 10,
               borderColor: '#002145',
               borderRadius:'10',
               borderWidth:'2',
-              padding: 16,
-              paddingHorizontal:55,
               alignItems: 'center',
-              width: '48%'
+              justifyContent: 'space-evenly',
+              alignContent:'flex-start',
+              width: '45%'
               }}
               onPress={()=>{return}}> 
         <View style = {styles.button1}>
@@ -72,13 +72,10 @@ export default function Supervisor() {
       style={{
               backgroundColor:'#FFFFFF', 
               padding: 15,
-              right:-25,
               marginTop: 10,
               borderColor: '#002145',
               borderRadius:'10',
               borderWidth:'2',
-              padding: 16,
-              paddingHorizontal:45,
               alignItems: 'center',
               width: '45%'
               }}
@@ -89,41 +86,35 @@ export default function Supervisor() {
       </TouchableOpacity>
     </View>
 
-
-    <SafeAreaView style={styles.container}>
-    
-    {/* <View style={{ flexDirection: "row"}}>
-      <Text style={{}}>
-          Unassigned
-      </Text>
-      <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      <Text style={{}}>
-        Assigned
-      </Text>
-    </View> */}
-    
     <FlatList
       data={tasksjson}
       renderItem={({ item }) => 
         <View  style={styles.item}>
-          <Text style={styles.text}>{item.name}</Text>
+          <Text style={{ 
+              fontFamily: 'Mulish',
+              fontStyle: 'normal',
+              fontWeight: '700',
+              fontSize: 14,
+              color: '#030919'
+            }}>{item.name}</Text>
           <Text >{item.startloc}</Text>
           <Text >{item.endloc}</Text>
           <Text >{item.dist}</Text>
           <Text >{item.rectime}</Text>
+          <TouchableOpacity style = {{width: '20%'}} onPress={()=>{return}}>
+              <Text style = {{color:"#FF6600", 
+                              borderColor:'#FF6600',
+                              borderWidth: 1,
+                              borderRadius: 5,
+                              padding: 10
+                              }}>
+              Assign</Text>
+          </TouchableOpacity>
         </View>
       }
       keyExtractor={(item) => item.id}
       ItemSeparatorComponent={myItemSeparator}
     />
-
-    </SafeAreaView>
       
     </View>
   );
@@ -149,17 +140,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    height: 80,
+    height: 100,
     justifyContent: 'center',
     marginVertical: 8,
     marginHorizontal: 16,
-    padding: 20,
   },
   header : {
     fontSize: 24,
     color: '#FF6600',
-    marginLeft: "49%"
+    textAlignVertical:"center"
   },
   text : {
     fontSize: 12,
