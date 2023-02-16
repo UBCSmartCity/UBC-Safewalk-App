@@ -39,14 +39,20 @@ export default function Supervisor() {
   return (
     <View style={styles.container}>
       
-      <Text style={styles.header}>
-        Walk Requests
-      </Text>
-       <SelectList 
-        setSelected={(val) => setSelected(val)} 
-        data={data} 
-        save="value"
-      />
+      <View style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
+        <Text style={styles.header}>
+          Walk Requests
+        </Text>
+        <View style={{maxWidth:'40%', maxHeight:'10%'}}>
+          <SelectList
+          setSelected={(val) => setSelected(val)} 
+          data={data} 
+          save="value"
+        />
+        </View>
+      </View>
+      
+       
     
 
 <View style={{ flexDirection: "row" , width:"100%" , justifyContent:"space-evenly",display:"flex",alignContent:"flex-start"}}>
@@ -90,26 +96,55 @@ export default function Supervisor() {
       data={tasksjson}
       renderItem={({ item }) => 
         <View  style={styles.item}>
-          <Text style={{ 
-              fontFamily: 'Mulish',
+          <View style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            paddingBottom: 15
+          }}>
+            <Text style={{ 
+              fontStyle: 'normal',
+              fontWeight: '700',
+              fontSize: 18,
+              color: '#030919',
+              paddingRight: 20
+            }}>{item.name}</Text>
+              <Text style={{
+              color:"#FF6600", 
+              borderColor:'#FF6600',
+              borderWidth: 1,
+              backgroundColor: "FF6600",
+              borderRadius: 5,
+              padding: 5
+            }}>{item.dist}</Text>
+            
+            <Text style={{
               fontStyle: 'normal',
               fontWeight: '700',
               fontSize: 14,
-              color: '#030919'
-            }}>{item.name}</Text>
-          <Text >{item.startloc}</Text>
-          <Text >{item.endloc}</Text>
-          <Text >{item.dist}</Text>
-          <Text >{item.rectime}</Text>
-          <TouchableOpacity style = {{width: '20%'}} onPress={()=>{return}}>
-              <Text style = {{color:"#FF6600", 
-                              borderColor:'#FF6600',
-                              borderWidth: 1,
-                              borderRadius: 5,
-                              padding: 10
-                              }}>
-              Assign</Text>
-          </TouchableOpacity>
+              color: '#030919',
+              marginLeft: "auto"
+              }}>{item.rectime}</Text>
+          </View>
+          <View style={{display:'flex', flexDirection:'column'}}>
+            <View style={{display: 'flex', flexDirection: 'column'}}>
+              <Text >{item.startloc}</Text>
+              <Text >{item.endloc}</Text>
+
+            </View>
+
+
+            <TouchableOpacity style = {{width: '20%', marginLeft:'auto'}} onPress={()=>{return}}>
+                <Text style = {{color:"#FF6600", 
+                                borderColor:'#FF6600',
+                                borderWidth: 1,
+                                borderRadius: 5,
+                                padding: 10
+                                }}>
+                Assign</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       }
       keyExtractor={(item) => item.id}
@@ -140,15 +175,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   item: {
-    height: 100,
+    height: 150,
     justifyContent: 'center',
     marginVertical: 8,
-    marginHorizontal: 16,
+    paddingHorizontal: 16,
+    backgroundColor:'white'
   },
   header : {
     fontSize: 24,
     color: '#FF6600',
-    textAlignVertical:"center"
+    textAlignVertical:"center",
+    fontWeight: '700'
   },
   text : {
     fontSize: 12,
