@@ -3,8 +3,6 @@ For my personal use:
 # For the simple MongoDB tutorial
 source ~/desktop/project/venv/bin/activate 
 # For the API tutorial
-source ~/desktop/project/venvCocktail/bin/activate 
-
 source backend/bin/activate 
 To Run:
 
