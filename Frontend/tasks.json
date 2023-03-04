@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Hailey",
+        "startloc":"Start location: AMS Nest",
+        "endloc":"End location: Orchard Commons",
+        "dist":"1.5km",
+        "rectime":"Recieved: 20:45",
+        "id":"0"
+    },
+    {
+        "name":"Braxton",
+        "startloc":"Start location: Life Building",
+        "endloc":"End location: Chemical and Biological Engineering Building",
+        "dist":"1.3km",
+        "rectime":"Recieved: 21:08",
+        "id":"1"
+    },
+    {
+        "name":"Braxton",
+        "startloc":"Start location: Life Building",
+        "endloc":"End location: Chemical and Biological Engineering Building",
+        "dist":"1.3km",
+        "rectime":"Recieved: 21:08",
+         "id":"1"
+    }  
+]
