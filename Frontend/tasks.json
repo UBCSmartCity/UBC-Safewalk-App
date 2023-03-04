@@ -5,7 +5,8 @@
         "endloc":"End location: Orchard Commons",
         "dist":"1.5km",
         "rectime":"Recieved: 20:45",
-        "id":"0"
+        "id":"0",
+        "state":"unassigned"
     },
     {
         "name":"Braxton",
@@ -13,7 +14,8 @@
         "endloc":"End location: Chemical and Biological Engineering Building",
         "dist":"1.3km",
         "rectime":"Recieved: 21:08",
-        "id":"1"
+        "id":"1",
+        "state":"unassigned"
     },
     {
         "name":"Braxton",
@@ -21,6 +23,7 @@
         "endloc":"End location: Chemical and Biological Engineering Building",
         "dist":"1.3km",
         "rectime":"Recieved: 21:08",
-         "id":"1"
+        "id":"1",
+        "state":"unassigned"
     }  
 ]

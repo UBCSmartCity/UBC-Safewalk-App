@@ -46,6 +46,7 @@ export default function Supervisor() {
         <View style={{maxWidth:'40%', maxHeight:'10%'}}>
           <SelectList
           setSelected={(val) => setSelected(val)} 
+          search = 'false'
           data={data} 
           save="value"
         />
