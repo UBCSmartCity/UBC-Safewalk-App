@@ -11,6 +11,7 @@ import { SelectList } from 'react-native-dropdown-select-list';
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
+import { color } from 'react-native-reanimated';
   
   const Item = ({title}) => (
     <View style={styles.item}>
@@ -38,29 +39,35 @@ export default function Supervisor() {
   return (
     <View style={styles.container}>
       
-      <Text style={styles.header}>
-        Walk Requests
-      </Text>
-       <SelectList 
-        setSelected={(val) => setSelected(val)} 
-        data={data} 
-        save="value"
-      />
+      <View style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
+        <Text style={styles.header}>
+          Walk Requests
+        </Text>
+        <View style={{maxWidth:'40%', maxHeight:'10%'}}>
+          <SelectList
+          setSelected={(val) => setSelected(val)} 
+          search = 'false'
+          data={data} 
+          save="value"
+        />
+        </View>
+      </View>
+      
+       
     
 
-<View style={{ flexDirection: "row" }}>
+<View style={{ flexDirection: "row" , width:"100%" , justifyContent:"space-evenly",display:"flex",alignContent:"flex-start"}}>
       <TouchableOpacity 
       style={{backgroundColor: '#FFFFFF', 
               padding: 15,
-              left:10,
               marginTop: 10,
               borderColor: '#002145',
               borderRadius:'10',
               borderWidth:'2',
-              padding: 16,
-              paddingHorizontal:55,
               alignItems: 'center',
-              width: '48%'
+              justifyContent: 'space-evenly',
+              alignContent:'flex-start',
+              width: '45%'
               }}
               onPress={()=>{return}}> 
         <View style = {styles.button1}>
@@ -72,13 +79,10 @@ export default function Supervisor() {
       style={{
               backgroundColor:'#FFFFFF', 
               padding: 15,
-              right:-25,
               marginTop: 10,
               borderColor: '#002145',
               borderRadius:'10',
               borderWidth:'2',
-              padding: 16,
-              paddingHorizontal:45,
               alignItems: 'center',
               width: '45%'
               }}
@@ -89,41 +93,64 @@ export default function Supervisor() {
       </TouchableOpacity>
     </View>
 
-
-    <SafeAreaView style={styles.container}>
-    
-    {/* <View style={{ flexDirection: "row"}}>
-      <Text style={{}}>
-          Unassigned
-      </Text>
-      <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      <Text style={{}}>
-        Assigned
-      </Text>
-    </View> */}
-    
     <FlatList
       data={tasksjson}
       renderItem={({ item }) => 
-        <View>
-          <Text style={styles.item}>{item.name}</Text>
-          <Text style={styles.item}>{item.startloc}</Text>
-          <Text style={styles.item}>{item.endloc}</Text>
-          <Text style={styles.item}>{item.dist}</Text>
-          <Text style={styles.item}>{item.rectime}</Text>
+        <View  style={styles.item}>
+          <View style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            paddingBottom: 15
+          }}>
+            <Text style={{ 
+              fontStyle: 'normal',
+              fontWeight: '700',
+              fontSize: 18,
+              color: '#030919',
+              paddingRight: 20
+            }}>{item.name}</Text>
+              <Text style={{
+              color:"#FF6600", 
+              borderColor:'#FF6600',
+              borderWidth: 1,
+              backgroundColor: "FF6600",
+              borderRadius: 5,
+              padding: 5
+            }}>{item.dist}</Text>
+            
+            <Text style={{
+              fontStyle: 'normal',
+              fontWeight: '700',
+              fontSize: 14,
+              color: '#030919',
+              marginLeft: "auto"
+              }}>{item.rectime}</Text>
+          </View>
+          <View style={{display:'flex', flexDirection:'column'}}>
+            <View style={{display: 'flex', flexDirection: 'column'}}>
+              <Text >{item.startloc}</Text>
+              <Text >{item.endloc}</Text>
+
+            </View>
+
+
+            <TouchableOpacity style = {{width: '20%', marginLeft:'auto'}} onPress={()=>{return}}>
+                <Text style = {{color:"#FF6600", 
+                                borderColor:'#FF6600',
+                                borderWidth: 1,
+                                borderRadius: 5,
+                                padding: 10
+                                }}>
+                Assign</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       }
       keyExtractor={(item) => item.id}
       ItemSeparatorComponent={myItemSeparator}
     />
-
-    </SafeAreaView>
       
     </View>
   );
@@ -149,16 +176,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    height: 80,
+    height: 150,
     justifyContent: 'center',
     marginVertical: 8,
-    marginHorizontal: 16,
-    padding: 20,
+    paddingHorizontal: 16,
+    backgroundColor:'white'
   },
   header : {
     fontSize: 24,
     color: '#FF6600',
-    marginLeft: "49%"
+    textAlignVertical:"center",
+    fontWeight: '700'
+  },
+  text : {
+    fontSize: 12,
+    color: 'white'
   }
 });
