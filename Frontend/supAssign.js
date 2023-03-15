@@ -3,6 +3,10 @@ import {  SafeAreaView, StyleSheet, Text, TouchableOpacity, View , Button} from 
 import React, { useState } from 'react';
 import CheckBox from 'expo-checkbox'
 import { Ionicons } from '@expo/vector-icons';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 
 function supAssign({ navigation }) {   
@@ -18,7 +22,7 @@ function supAssign({ navigation }) {
               {`Assign a safewalker to accompany the selected user for their upcoming walk. Safewalkers that are already on a task will appear unavailable.`}
           </Text>
   
-          <View style = {{marginTop: 10, marginLeft: 5}}>
+          <View style = {{marginTop: hp('1%'), marginLeft: hp('1%')}}>
             <Text style={styles.title2}> Available for this task: <Text style={{fontStyle: 'italic', fontWeight: 'normal'}}> (Select one or more) </Text></Text>
             <View style={styles.container}>
             <View style={styles.listContainer}>
@@ -42,7 +46,7 @@ function supAssign({ navigation }) {
             </View>
           </View> 
   
-          <View style = {{marginTop: 10, marginLeft: 5}}>
+          <View style = {{marginTop: hp('2%'), marginLeft: hp('1%')}}>
             <Text style={styles.title2}> Unavailable for this task: </Text>
             <View style={styles.container}>
             <View style={styles.listContainer}>
@@ -59,16 +63,16 @@ function supAssign({ navigation }) {
                     borderWidth:1,
                     borderColor:'#FF6600',
                     alignItems:'center',
-                    marginLeft:90,
+                    marginLeft:hp('6.5%'),
                     justifyContent:'center',
-                    width:250,
-                    height:50,
+                    width: wp('70%'),
+                    height:hp('5%'),
                     backgroundColor:'#FF6600',
                     borderRadius:20,
-                    marginTop: 60
+                    marginTop: hp('6%')
                     }}
                 >
-                <Text style = {{ color: '#FFF', fontSize: 20, marginTop: 0}}>  Assign  </Text>
+                <Text style = {{ color: '#FFF', fontSize: hp('3%'), marginTop: 0}}>  Assign  </Text>
                 </TouchableOpacity>
           </View>
         </View>
@@ -79,60 +83,60 @@ function supAssign({ navigation }) {
   title1: 
     {
       color: '#FF6600', 
-      fontSize: 20, 
+      fontSize: hp('3%'), 
       fontWeight: 'bold', 
       textAlign: 'center',
-      marginTop: 20,
-      marginLeft: 9,
+      marginTop: hp('1.2%'),
+      marginLeft: hp('0.5%'),
     },
     title2: 
     {
       color: '#030919', 
-      fontSize: 20, 
+      fontSize: hp('2%'), 
       fontWeight: 'bold', 
       alignItems: 'left',
-      margin: 1,
-      marginLeft: 8,
+      margin: hp('0.5%'),
+      marginLeft: hp('1%'),
     },
     AvailableSW: 
     {
       color: '#555B6A', 
-      fontSize: 18, 
+      fontSize: hp('2%'), 
       alignItems: 'left',
-      margin: 15,
-      marginTop: 20,
+      margin: hp('1.2%'),
+      marginTop: hp('3%'),
     },
     UnavailableSW: 
     {
       color: '#555B6A', 
-      fontSize: 18, 
+      fontSize: hp('2%'), 
       alignItems: 'left',
-      margin: 15,
-      marginLeft: 23,
+      margin: hp('1.2%'),
+      marginLeft: hp('1%'),
       textDecorationLine: 'line-through'
     },
     c1: 
     {
-      marginLeft: 300,
-      marginTop: -35,
+      marginLeft: hp('35%'),
+      marginTop: hp('-2%'),
     },
     c2: 
     {
-      marginLeft: 300,
-      marginTop: -35,
+      marginLeft: hp('35%'),
+      marginTop: hp('-2%'),
     },
     paragraph: {
       padding: 20,
-      marginLeft: -5,
-      fontSize: 15,
+      marginLeft: hp('-0.5%'),
+      fontSize: hp('1.5%'),
       color: '#555B6A',
       textAlign: 'justify',
     },
 
       listContainer: {
       flexDirection: 'column',
-      marginTop: 10,
-      marginLeft: 15,
+      marginTop: hp('1%'),
+      marginLeft: hp('1.5%'),
     },
 
   });

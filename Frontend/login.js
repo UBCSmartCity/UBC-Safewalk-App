@@ -3,8 +3,6 @@ import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpac
 import lgo from './assets/lg.png'
 import home from './assets/home.png'
 
-
-
 function LoginScreen({ navigation }) {
 
   return (

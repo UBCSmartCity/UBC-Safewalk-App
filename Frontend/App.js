@@ -38,23 +38,24 @@ return (
 };
 
 
-
 const DrawerNavigator = () => {
-return (
-<Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
-<Drawer.Screen name="Home" component={HomeScreen} />
-<Drawer.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-<Drawer.Screen name="Settings" component={NavScreen} />
-<Drawer.Screen name="Student" component={StudentLogin} />
-<Drawer.Screen name="Employee" component={EmployeeLogin} />
-<Drawer.Screen name="Supervisor" component={Supervisor} />
-<Drawer.Screen name="supAssign" component={supAssign} />
-<Drawer.Screen name="acceptScreen" component={AssignScreen} />
-<Drawer.Screen name="acceptScreenTwo" component={AcceptScreen} />
-<Drawer.Screen name="verification" component={verification} />
-</Drawer.Navigator>
-);
-};
+  return (
+  <Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
+  <Drawer.Screen name="Home" component={HomeScreen} options={{ title: 'SAFEWALK', headerStyle: {backgroundColor: '#D9D9D9',},headerTintColor: '#002145', 
+  headerTitleStyle: {fontWeight: 'bold',},}}/>
+
+  <Drawer.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+  <Drawer.Screen name="Settings" component={NavScreen}  />
+  <Drawer.Screen name="Student" component={StudentLogin} />
+  <Drawer.Screen name="Employee" component={EmployeeLogin} />
+  <Drawer.Screen name="Supervisor" component={Supervisor} />
+  <Drawer.Screen name="supAssign" component={supAssign} />
+  <Drawer.Screen name="acceptScreen" component={AssignScreen} />
+  <Drawer.Screen name="acceptScreenTwo" component={AcceptScreen} />
+  <Drawer.Screen name="verification" component={verification} />
+  </Drawer.Navigator>
+  );
+  };
 
 const App = () => {
 return (
