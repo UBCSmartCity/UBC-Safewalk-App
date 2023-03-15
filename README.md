@@ -1,10 +1,14 @@
 # UBC-Safewalk-App
 
-This year we are planning to work on UBC SafeWalk App 
+Throughout this year, our team has dedicated our efforts towards the development of the UBC SafeWalk application. This innovative mobile app facilitates the process of requesting a walk, where certified and trained safewalkers can accept the task of accompanying the requester to their destination, and only individuals with the necessary credentials as approved by UBC SafeWalk can undertake the safewalker role.
 
-Description: Similar to DoorDash/UberEats-esque app where users can request a safewalk via app, and anyone certified/trained to do so can take the “job” at their own leisure. Being a “delivery driver” (i.e. the safewalker) will require that they have all the training and such that is already present. The safewalkee will be able to see a headshot photo of the person that they’re walking with, receive a verification PIN, can live share location with a friend, to ensure absolute safety during the walk. 
 
-This app could extend to other campus safety and health resources. A UBC Safe app exists already, https://security.ubc.ca/home/safety-prevention-resources/ubc-safe-app/, but the UI is very out of date and theSafeWalk functionality above is not implemented so we are making it better!
+The app allows safewalkees, or users requesting the walk, to easily share their current location and destination locations through the app. Upon submission of the request, the user will receive a verification PIN, providing an added layer of security to an already safety-focused service. The user is then promptly matched with the designated safewalker, streamlining the entire process and ensuring that the individual can access the necessary assistance quickly and efficiently.
+
+
+The newly designed SafeWalk app not only provides a valuable service for the UBC community but also has the potential to extend its reach to other health and safety resources offered by the AMS. Our team has proactively reached out to the AMS SafeWalk team for collaboration, and we are pleased to report that they have approved of the initiative. such collaboration would strengthen the existing SafeWalk program and other resources. The app is a testament to its potential to make a positive impact within the UBC community and beyond.
+
+Below are the figma designs that our team developed prior to building app protoype.
 
 <br>
 <img width="780" alt="Screen Shot 2023-03-14 at 6 09 42 PM" src="https://user-images.githubusercontent.com/70575969/225178430-eec0194f-4358-4ef0-b0b4-189afb392462.png">
@@ -14,3 +18,7 @@ This app could extend to other campus safety and health resources. A UBC Safe ap
 <p float="left">
 <img width="350" alt="Screen Shot 2023-03-14 at 6 04 32 PM" src="https://user-images.githubusercontent.com/70575969/225178006-a9cd5737-0ad1-4c91-8d67-c4dd5705c99e.png"> <img width="525" alt="Screen Shot 2023-03-14 at 6 04 44 PM" src="https://user-images.githubusercontent.com/70575969/225178009-a0b77e40-1253-4c4a-9790-0b021f265a79.png">
 </p>
+
+The frontend team worked on implementing the user interface referring to the design from figma board and made the UI compatible to different screen sizes. The backend team worked on set up a docker container to store user data into Azure CosmoDB, and to write API code for login and map integration.
+
+
