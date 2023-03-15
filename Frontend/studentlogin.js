@@ -4,7 +4,10 @@ import lgo from './assets/lg.png'
 import home from './assets/home.png'
 import { TextInput } from 'react-native-paper';
 import React, { useState } from 'react';
-
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 
 function StudentLogin({ navigation }) {
@@ -19,10 +22,10 @@ function StudentLogin({ navigation }) {
 
       <ImageBackground source={home} style={styles.image}>
 
-      <Text style = {{ color: '#002145', fontSize: 45, fontWeight: 'bold', marginTop: -550}}> SafeWalk </Text>
-      <Text style = {{ color: '#030919', fontSize: 20, fontWeight: 'bold',marginTop:100, marginLeft: -150}}> Personal Information </Text>
-      <Text style = {{ color: '#555B6A', fontSize: 18, fontWeight: 'normal', marginTop: 10, marginLeft: -50}}> Please provide us with your personal </Text>
-      <Text style = {{ color: '#555B6A', fontSize: 18, fontWeight: 'normal', marginTop: 3, marginLeft: -137}}> details to know you better </Text>
+      <Text style = {{ color: '#002145', fontSize: hp('5%'), fontWeight: 'bold', marginTop: hp('-60%')}}> SafeWalk </Text>
+      <Text style = {{ color: '#030919', fontSize: hp('2%'), fontWeight: 'bold',marginTop:hp('10%'), marginLeft: hp('-18%')}}> Personal Information </Text>
+      <Text style = {{ color: '#555B6A', fontSize: hp('2%'), fontWeight: 'normal', marginTop: hp('1%'), marginLeft: hp('-5%')}}> Please provide us with your personal </Text>
+      <Text style = {{ color: '#555B6A', fontSize: hp('2%'), fontWeight: 'normal', marginTop: hp('1%'), marginLeft: hp('-14.5%')}}> details to know you better </Text>
 
       <TextInput
         style={styles.input}
@@ -65,30 +68,30 @@ const styles = StyleSheet.create({
   image: 
   {
     flex: 1,
-    height: '100%',
-    width:'100%',
+    height: hp('100%'),
+    width:wp('100%'),
     justifyContent: 'center',
     alignItems: 'center'
   },
   text1: 
   {
     color: '#002145', 
-    fontSize: 20, 
+    fontSize: hp('2%'), 
     fontWeight: 'bold', 
     alignItems: 'center'
   },
   text2: 
   {
     color: '#1D1E21', 
-    fontSize: 15, 
+    fontSize: hp('2%'), 
     fontWeight: 'italics', 
     alignItems: 'center'
   },
   button1:
   {
     position:'absolute',
-    bottom:-280,
-    left:-130,
+    bottom:hp('-30%'),
+    left:hp('-14%'),
     backgroundColor: '#FFFFFF',
     borderColor: '#002145',
     borderRadius:'5',
@@ -102,23 +105,23 @@ const styles = StyleSheet.create({
   },
   input: 
   {
-    width: 350,
+    width: wp('82%'),
     position: 'absolute',
-    top: 300,
-    height: 50,
+    top: hp('33%'),
+    height: hp('5%'),
     padding: 5,
     borderWidth: 1,
     borderColor: '#C9CCD3',
     borderRadius:'10',
     backgroundColor: '#FFFFFF',
-    marginBottom: 10,
+    marginBottom: hp('10%'),
   },
   input1: 
   {
-    width: 350,
-    height: 50,
+    width: wp('82%'),
+    height: hp('5%'),
     position: 'absolute',
-    top: 390,
+    top: hp('42%'),
     padding: 5,
     borderWidth: 1,
     borderRadius:'10',
@@ -126,5 +129,6 @@ const styles = StyleSheet.create({
     borderColor: '#C9CCD3',
   }
 });
+
 
 export default StudentLogin;

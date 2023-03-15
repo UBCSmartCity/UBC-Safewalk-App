@@ -1,0 +1,21 @@
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {isLoggedIn ? (
+          <>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
+          </>
+        ) : (
+          <Stack.Screen name="Login" component={LoginScreen} />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}

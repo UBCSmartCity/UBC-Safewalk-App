@@ -38,8 +38,8 @@ return (
 };
 
 
-
 const DrawerNavigator = () => {
+
 return (
 <Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
 <Drawer.Screen name="Home" component={HomeScreen} />
@@ -55,6 +55,7 @@ return (
 </Drawer.Navigator>
 );
 };
+
 
 const App = () => {
 return (

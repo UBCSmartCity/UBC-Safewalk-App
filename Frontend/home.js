@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button, TouchableHighlight, Modal} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 function HomeScreen({ navigation }) { 
 
@@ -28,18 +32,18 @@ function HomeScreen({ navigation }) {
                 borderColor:'#FF6600',
                 alignItems:'center',
                 justifyContent:'center',
-                width:200,
-                height:200,
+                width: wp('60%'),
+                height:hp('28%'),
                 backgroundColor:'#FF6600',
-                borderRadius:100,
+                borderRadius:200,
                 }}
             >
-            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 0}}>  REQUEST  </Text>
-            <Text style = {{ color: '#FFF', fontSize: 30, fontWeight: 'bold', marginTop: 2}}> SAFEWALK  </Text>
+            <Text style = {{ color: '#FFF', fontSize: hp('3%'), fontWeight: 'bold', marginTop: 0}}>  REQUEST  </Text>
+            <Text style = {{ color: '#FFF', fontSize: hp('3%'), fontWeight: 'bold', marginTop: hp('1%')}}> SAFEWALK  </Text>
           </TouchableOpacity>
             
 
-        <Text style = {{ color: '#000', fontSize: 15, marginTop: 15,  textAlign: "center" }}> In the case where accompaniment is {'\n'}  needed, press this button so we can attend {'\n'}  to your location immediately   </Text>
+        <Text style = {{ color: '#000', fontSize: hp('1.8%'), marginTop: hp('3%'),  textAlign: "center" }}> In the case where accompaniment is {'\n'}  needed, press this button so we can attend {'\n'}  to your location immediately   </Text>
         
         <TouchableOpacity  onPress={() => { onPressMobileNumberClick("911") }}
             style={{
@@ -47,17 +51,17 @@ function HomeScreen({ navigation }) {
                 borderColor:'#FE2633',
                 alignItems:'center',
                 justifyContent:'center',
-                width:250,
-                height:50,
+                width:wp('80%'),
+                height:hp('6%'),
                 backgroundColor:'#FE2633',
                 borderRadius:20,
-                marginTop: 60
+                marginTop: hp('6%')
                 }}
             >
-            <Text style = {{ color: '#FFF', fontSize: 20, marginTop: 0}}>  Emergency  </Text>
+            <Text style = {{ color: '#FFF', fontSize: hp('2%'), marginTop: 0}}>  Emergency  </Text>
             </TouchableOpacity>
 
-            <View style={{borderWidth:'1.5', paddingBottom: 5, paddingTop: 10, paddingLeft: 5, paddingRight: 5, borderRadius: '10', margin:10, marginTop:50 }}>
+            <View style={{borderWidth:'1.5', paddingBottom: 5, paddingTop: 10, paddingLeft: 5, paddingRight: 5, borderRadius: '10', margin:wp('6%'), marginTop:hp('5%') }}>
             <Text style={styles.text3}> ATTENTION! </Text>
             <Text style={styles.paragraph}>
             {`In the case of an emergency, rapidly tap the EMERGENCY button 1 time to initate a response. SafeWalk will dispatch personnel to your location immediately and notify emergency services.`}
@@ -146,69 +150,63 @@ const styles = StyleSheet.create({
   text3: 
   {
     color: '#FE2633', 
-    fontSize: 15, 
+    fontSize: hp('1.5%'), 
     fontWeight: 'bold', 
     alignItems: 'left',
     margin: 1
   },
   modalText: {
-    marginTop: 1,
-    marginLeft: -200,
+    marginTop: hp('-1%'),
+    marginLeft: hp('-22%'),
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: hp('2%'),
     textAlign: 'center',
   },
   modalText1: {
-    marginTop: 1,
-    marginLeft: -250,
+    marginTop: hp('-1%'),
+    marginLeft: hp('-22%'),
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: hp('2%'),
     textAlign: 'center',
   },
   confirmButton: {
     backgroundColor: '#118C07',
     borderRadius: 5,
-    height: 60,
-    width:150,
+    height: hp('6%'),
+    width:wp('35%'),
     padding: 17,
-    marginTop: 360,
-    marginLeft: -165,
+    marginTop: hp('40%'),
+    marginLeft: hp('-20%'),
   },
   cancelButton: {
     backgroundColor: '#FFFFFF',
     borderColor: '#002145',
     borderRadius: 5,
     borderWidth: 2,
-    height: 60,
-    width:150,
+    height: hp('6%'),
+    width:wp('35%'),
     padding: 17,
-    marginTop: -60,
-    marginLeft: 165,
+    marginTop: hp('-6%'),
+    marginLeft: hp('20%'),
   },
-  openButton: {
-    backgroundColor: '#F194FF',
-    borderRadius: 20,
-    padding: 10,
-    marginTop:10,
-    elevation: 2,
-  },
+  
   textStyle: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: hp('2%'),
     textAlign: 'center',
   },
   textStyle1: {
     color: '#002145',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: hp('2%'),
     textAlign: 'center',
   },
   modalView: {
-    marginTop: 200,
-    marginLeft:15,
-    marginRight:15,
-    height:500,
+    marginTop: hp('20%'),
+    marginLeft: hp('2%'),
+    marginRight:hp('2%'),
+    height:hp('54%'),
     backgroundColor: 'white',
     borderRadius: 20,
     padding: 35,
@@ -222,17 +220,6 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
   },
-  CenterView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  paragraph: {
-    margin: 4,
-    fontSize: 15,
-    textAlign: 'justify',
-  }
 });
 
 
