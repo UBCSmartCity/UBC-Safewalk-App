@@ -16,7 +16,7 @@ Below are the figma designs that our team developed prior to building app protoy
 <img width="880" alt="Screen Shot 2023-03-14 at 6 04 14 PM" src="https://user-images.githubusercontent.com/70575969/225178000-a4dc9aef-e9b9-43c2-9e30-eca0533f553d.png">
 
 <p float="left">
-<img width="350" alt="Screen Shot 2023-03-14 at 6 04 32 PM" src="https://user-images.githubusercontent.com/70575969/225178006-a9cd5737-0ad1-4c91-8d67-c4dd5705c99e.png"> <img width="525" alt="Screen Shot 2023-03-14 at 6 04 44 PM" src="https://user-images.githubusercontent.com/70575969/225178009-a0b77e40-1253-4c4a-9790-0b021f265a79.png">
+<img width="350" alt="Screen Shot 2023-03-14 at 6 04 32 PM" src="https://user-images.githubusercontent.com/70575969/225178006-a9cd5737-0ad1-4c91-8d67-c4dd5705c99e.png"> <img width="500" alt="Screen Shot 2023-03-14 at 6 04 44 PM" src="https://user-images.githubusercontent.com/70575969/225178009-a0b77e40-1253-4c4a-9790-0b021f265a79.png">
 </p>
 
 The frontend team worked on implementing the user interface referring to the design from figma board and made the UI compatible to different screen sizes. The backend team worked on set up a docker container to store user data into Azure CosmoDB, and to write API code for login and map integration.
