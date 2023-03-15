@@ -6,9 +6,8 @@ Description: Similar to DoorDash/UberEats-esque app where users can request a sa
 
 This app could extend to other campus safety and health resources. A UBC Safe app exists already, https://security.ubc.ca/home/safety-prevention-resources/ubc-safe-app/, but the UI is very out of date and theSafeWalk functionality above is not implemented so we are making it better!
 
-<img width="785" alt="Screen Shot 2023-03-14 at 6 03 41 PM" src="https://user-images.githubusercontent.com/70575969/225177981-cca81b11-ac77-40b8-8f4a-db725d42a957.png">
-
+<img width="786" alt="Screen Shot 2023-03-14 at 6 04 14 PM" src="https://user-images.githubusercontent.com/70575969/225178180-2b7bcc00-7722-4334-9e6e-5ac1734ccf5b.png">
 
 <img width="786" alt="Screen Shot 2023-03-14 at 6 04 14 PM" src="https://user-images.githubusercontent.com/70575969/225178000-a4dc9aef-e9b9-43c2-9e30-eca0533f553d.png">
-<img width="371" alt="Screen Shot 2023-03-14 at 6 04 32 PM" src="https://user-images.githubusercontent.com/70575969/225178006-a9cd5737-0ad1-4c91-8d67-c4dd5705c99e.png">
-<img width="548" alt="Screen Shot 2023-03-14 at 6 04 44 PM" src="https://user-images.githubusercontent.com/70575969/225178009-a0b77e40-1253-4c4a-9790-0b021f265a79.png">
+<img width="200" alt="Screen Shot 2023-03-14 at 6 04 32 PM" src="https://user-images.githubusercontent.com/70575969/225178006-a9cd5737-0ad1-4c91-8d67-c4dd5705c99e.png">
+<img width="200" alt="Screen Shot 2023-03-14 at 6 04 44 PM" src="https://user-images.githubusercontent.com/70575969/225178009-a0b77e40-1253-4c4a-9790-0b021f265a79.png">
