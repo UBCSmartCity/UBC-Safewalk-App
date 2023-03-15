@@ -64,7 +64,7 @@ function HomeScreen({ navigation }) {
             <View style={{borderWidth:'1.5', paddingBottom: 5, paddingTop: 10, paddingLeft: 5, paddingRight: 5, borderRadius: '10', margin:wp('6%'), marginTop:hp('5%') }}>
             <Text style={styles.text3}> ATTENTION! </Text>
             <Text style={styles.paragraph}>
-            {`In the case of an emergency, rapidly tap the EMERGENCY button 3 times to initate a response. SafeWalk will dispatch personnel to your location immediately and notify emergency services.`}
+            {`In the case of an emergency, rapidly tap the EMERGENCY button 1 time to initate a response. SafeWalk will dispatch personnel to your location immediately and notify emergency services.`}
             </Text>
             </View>
           

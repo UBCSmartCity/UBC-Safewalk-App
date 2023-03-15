@@ -7,6 +7,10 @@ import Constants from 'expo-constants';
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
 
+import { Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('screen').width;
+
 export default function App({ navigation }) {
    const [modalVisible, setModalVisible] = useState(false);
     const [modalVisible1, setModalVisible1] = useState(false);
@@ -17,7 +21,7 @@ export default function App({ navigation }) {
         
           <View style={styles.subcontainer}>
             <Text style={styles.paragraph}>
-                Name  : <Text style={{fontWeight: 'bold'}}> Hailey </Text> 
+                Name  : <Text style={{fontWeight: 'bold'}}> Hailey</Text> 
             </Text>
             <Text style={styles.paragraph}>
                 Verify : <Text style={{fontWeight: 'bold'}}> KWB294 </Text>  

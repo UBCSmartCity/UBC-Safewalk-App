@@ -17,7 +17,7 @@ export default function App({ navigation }) {
         
           <View style={styles.subcontainer}>
             <Text style={styles.paragraph}>
-                Name  : <Text style={{fontWeight: 'bold'}}> Hailey </Text> 
+                Name  : <Text style={{fontWeight: 'bold'}}> Hailey 123333</Text> 
             </Text>
             <Text style={styles.paragraph}>
                 Verify : <Text style={{fontWeight: 'bold'}}> KWB294 </Text>  
