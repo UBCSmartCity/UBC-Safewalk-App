@@ -10,7 +10,7 @@ import {
 } from "react-native-responsive-screen";
 
 
-// For testing
+// For testing (BACKEND)
 const API_ngrok = "https://d8e8-206-87-116-76.ngrok.io"
 
 function StudentLogin({ navigation }) {
