@@ -5,12 +5,41 @@ import home from './assets/home.png'
 import { TextInput } from 'react-native-paper';
 import React, { useState } from 'react';
 
-
+// For testing
+const API_ngrok = "https://d8e8-206-87-116-76.ngrok.io"
 
 function StudentLogin({ navigation }) {
   
-  const [name, setNname] = useState('');
-  const [studentnumber, setStudentnumber] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const handleLogin = async () => {
+    try {
+      const response = await fetch(API_ngrok+"/login", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+      const data = await response.json();
+      if (data.message == "Login successful.") {
+        // Store authentication token
+        console.log('Login successful!');
+        navigation.navigate('Home');
+      } else {
+        setError(data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      setError('An error occurred. Please try again later.');
+    }
+  };
+  
+
 
   return (
     <View style={styles.container}>
@@ -26,25 +55,26 @@ function StudentLogin({ navigation }) {
 
       <TextInput
         style={styles.input}
-        placeholder="First & Last Name"
-        onChangeText={(text) => setNname(text)}
-        value={name}
+        placeholder="Username"
+        onChangeText={(text) => setUsername(text)}
+        value={username}
       />
       <TextInput
         style={styles.input1}
-        placeholder="Student Number"
-        onChangeText={(text) => setStudentnumber(text)}
-        value={studentnumber}
+        placeholder="Password"
+        onChangeText={(text) => setPassword(text)}
+        value={password}
         secureTextEntry
       />
  
       <View style={{ flexDirection: "row" }}>
 
     {/* presing login button directs you to the home screen */}
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}> 
+      <TouchableOpacity onPress={handleLogin}> 
         <View style = {styles.button1}>
           <Text style = {styles.text1}>Login</Text>
         </View>
+        {/* <Button title="Login" onPress={handleLogin} /> */}
       </TouchableOpacity>
 
     </View>

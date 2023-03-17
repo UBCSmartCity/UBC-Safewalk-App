@@ -3,49 +3,74 @@ import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpac
 import lgo from './assets/lg.png'
 import home from './assets/home.png'
 
-
-
 function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      
       <StatusBar style="auto" />
-
       <ImageBackground source={home} style={styles.image}>
-
-      <Text style = {{ color: '#002145', fontSize: 45, fontWeight: 'bold', marginTop: -150}}> SafeWalk </Text>
-      <Image source={lgo} style={styles.image1}></Image>
-      <Text style = {{ color: '#0047AB', fontSize: 20, fontWeight: 'bold',marginTop:350}}> Safety, Security and Peace of Mind </Text>
-      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 20}}> If you feel unsafe walking alone on </Text>
-      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> campus after dark, Safewalk can </Text>
-      <Text style = {{ color: '#000', fontSize: 18, fontWeight: 'normal', marginTop: 3}}> accompany you to your destination </Text>
-
-      <View style={{ flexDirection: "row" }}>
-
-    {/* presing login button directs you to the home screen */}
-      <TouchableOpacity onPress={() => navigation.navigate('Student')}> 
-        <View style = {styles.button1}>
-          <Text style = {styles.text1}>USERS</Text>
+        <Text
+          style={{
+            color: '#002145',
+            fontSize: 45,
+            fontWeight: 'bold',
+            marginTop: -150,
+          }}>
+          SafeWalk
+        </Text>
+        <Image source={lgo} style={styles.image1}></Image>
+        <Text
+          style={{
+            color: '#0047AB',
+            fontSize: 20,
+            fontWeight: 'bold',
+            marginTop: 350,
+          }}>
+          Safety, Security and Peace of Mind
+        </Text>
+        <Text
+          style={{
+            color: '#000',
+            fontSize: 18,
+            fontWeight: 'normal',
+            marginTop: 20,
+          }}>
+          If you feel unsafe walking alone on
+        </Text>
+        <Text
+          style={{
+            color: '#000',
+            fontSize: 18,
+            fontWeight: 'normal',
+            marginTop: 3,
+          }}>
+          campus after dark, Safewalk can
+        </Text>
+        <Text
+          style={{
+            color: '#000',
+            fontSize: 18,
+            fontWeight: 'normal',
+            marginTop: 3,
+          }}>
+          accompany you to your destination
+        </Text>
+        <View style={{ flexDirection: 'row' }}>
+          {/* presing login button directs you to the home screen */}
+          <TouchableOpacity onPress={() => navigation.navigate('Student')}>
+            <View style={styles.button1}>
+              <Text style={styles.text1}>USERS</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Employee')}>
+            <View style={styles.button2}>
+              <Text style={styles.text2}>Employee Login</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Employee')}>
-        <View style = {styles.button2}>
-          <Text style = {styles.text2}>Employee Login</Text>
-        </View>
-      </TouchableOpacity>
-
-
-
-    </View>
-
-    </ImageBackground>
-      
+      </ImageBackground>
       <StatusBar style="auto" />
-    
     </View>
-
   );
 }
 
