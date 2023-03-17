@@ -43,9 +43,10 @@ export default function Supervisor() {
         <Text style={styles.header}>
           Walk Requests
         </Text>
-        <View style={{maxWidth:'40%', maxHeight:'10%'}}>
+        <View style={{maxWidth:'40%', maxHeight:'50%'}}>
           <SelectList
           setSelected={(val) => setSelected(val)} 
+          search = 'false'
           data={data} 
           save="value"
         />

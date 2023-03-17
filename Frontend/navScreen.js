@@ -1,6 +1,10 @@
 import {  Image, SafeAreaView, ImageBackground, StyleSheet, Text,  TouchableOpacity, Linking, View , Button} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import profile from './assets/profile.png'
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 function NavScreen({ navigation }) {
 
@@ -10,12 +14,12 @@ function NavScreen({ navigation }) {
   
         {/*<Text style = {{ color: '#0047AB', fontSize: 45, fontWeight: 'bold', marginTop: 10}}> SafeWalk </Text> */}
         
-        <Text style = {{ color: '#FFFFFF', fontSize: 25, fontWeight: 'bold', marginTop:100, marginLeft: 106}}> John Doe </Text>
-        <Text style = {{ color: '#F7F7F7', fontSize: 15, fontWeight: 'normal', marginTop: 5, marginLeft: 109}}> View profile </Text>
+        <Text style = {{ color: '#FFFFFF', fontSize: hp('2%'), fontWeight: 'bold', marginTop:hp('11%'), marginLeft: hp('11.3%')}}> John Doe </Text>
+        <Text style = {{ color: '#F7F7F7', fontSize: hp('1.5%'), fontWeight: 'normal', marginTop: hp('1%'), marginLeft: hp('11.4%')}}> View profile </Text>
 
         <View style={styles.button2}>
             <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                <AntDesign name="closecircleo" size={38} color="white" />
+                <AntDesign name="closecircleo" size={hp('4%')} color="white" />
             </TouchableOpacity>
         </View>
 
@@ -25,7 +29,7 @@ function NavScreen({ navigation }) {
       {/* presing login button directs you to the home screen */}
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <View style={styles.button1}>
-                <AntDesign name="appstore-o" size={30} color="white" />
+                <AntDesign name="appstore-o" size={hp('4%')} color="white" />
             </View> 
             <Text style = {styles.text1}>Home</Text>
 
@@ -33,7 +37,7 @@ function NavScreen({ navigation }) {
   
         <TouchableOpacity onPress={() => navigation.navigate('Login')}> 
             <View style={styles.button3}>
-                <AntDesign name="logout" size={30} color="red" />
+                <AntDesign name="logout" size={hp('4%')} color="red" />
             </View> 
             <Text style = {styles.text2}>Log Out</Text>
  
@@ -55,43 +59,43 @@ function NavScreen({ navigation }) {
     {
       flex: 1,
       resizeMode: 'contain',
-      height: '15%',
-      width:'15%',
-      marginLeft: 15,
-      marginTop:-670
+      height: hp('15%'),
+      width: wp('15%'),
+      marginLeft: hp('2%'),
+      marginTop: hp('-72%')
         
     },
 
     text1: 
     {
       color: '#FFFFFF', 
-      fontSize: 20, 
+      fontSize: hp('2%'), 
       fontWeight: 'bold', 
       marginTop: -30,
-      marginLeft: 90
+      marginLeft: hp('9.5%')
     },
     text2: 
     {
       color: '#FFFFFF', 
-      fontSize: 20, 
+      fontSize: hp('2%'), 
       fontWeight: 'bold', 
       top: -448,
-      marginLeft: 90
+      marginLeft: hp('9.5%')
     },
     button1:
     {
-        marginTop:-505,
-        marginLeft:30  
+        marginTop:hp('-55%'),
+        marginLeft:hp('3.2%')  
     },
     button2:
     {
-      marginTop:-45,
-      marginLeft:360 
+      marginTop: hp('-4.5%'),
+      marginLeft:hp('38.5%') 
     },
     button3:
     {
-      bottom:420,
-      marginLeft:30 
+      bottom:hp('45%'),
+      marginLeft:hp('3.2%') 
     }
   });
   
