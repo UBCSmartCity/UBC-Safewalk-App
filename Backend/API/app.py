@@ -12,7 +12,7 @@ MONGO_CLOUD = "mongodb+srv://sonozaki:sonozaki@cluster0.dnwfcvc.mongodb.net/?ret
 CONNECTION_STRING = MONGO_CLOUD
 DB_NAME = "smartcity"
 
-# Connect to MongoDB
+# Connect to MongoDB, added certificate to fix the connection error
 client = MongoClient(
     CONNECTION_STRING,
     ssl=True,
