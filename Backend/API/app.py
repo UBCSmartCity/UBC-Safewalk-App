@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient, errors
 from bson.objectid import ObjectId
 import hashlib
+import ssl
 
 app = Flask(__name__)
 
@@ -12,7 +13,11 @@ CONNECTION_STRING = MONGO_CLOUD
 DB_NAME = "smartcity"
 
 # Connect to MongoDB
-client = MongoClient(CONNECTION_STRING)
+client = MongoClient(
+    CONNECTION_STRING,
+    ssl=True,
+    ssl_cert_reqs=ssl.CERT_NONE,
+)
 db = client[DB_NAME]
 
 # Define the collection to use for storing GPS data
