@@ -39,7 +39,6 @@ const MenuScreen = ({ navigation }) => {
 
 
 const DrawerNavigator = () => {
-<<<<<<< HEAD
   return (
     <Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
       <Drawer.Screen name="Home" component={HomeScreen} />
@@ -54,23 +53,6 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="verification" component={verification} />
     </Drawer.Navigator>
   );
-=======
-
-return (
-<Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
-<Drawer.Screen name="Home" component={HomeScreen} />
-<Drawer.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-<Drawer.Screen name="Settings" component={NavScreen} />
-<Drawer.Screen name="Student" component={StudentLogin} />
-<Drawer.Screen name="Employee" component={EmployeeLogin} />
-<Drawer.Screen name="Supervisor" component={Supervisor} />
-<Drawer.Screen name="supAssign" component={supAssign} />
-<Drawer.Screen name="acceptScreen" component={AcceptScreen1} />
-<Drawer.Screen name="acceptScreenTwo" component={AcceptScreen2} />
-<Drawer.Screen name="verification" component={verification} />
-</Drawer.Navigator>
-);
->>>>>>> 223d68541aadc69166f9f702ea0d7d9ee015f7c1
 };
 
 
