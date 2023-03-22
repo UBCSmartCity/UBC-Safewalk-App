@@ -7,8 +7,6 @@ import { Button, Menu, Divider, Provider, List } from 'react-native-paper';
 import { View } from 'react-native';
 import navScreen from './navScreen.js';
 import { TouchableOpacity, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 
 import { useState } from 'react';
 import { Image, StyleSheet } from 'react-native';
@@ -20,7 +18,6 @@ import EmployeeLogin from './employeelogin.js';
 import Supervisor from './supervisor.js';
 import supAssign from './supAssign.js';
 import AcceptScreen1 from './accept1.js';
-import AcceptScreen2 from './accept2.js'
 import verification from './verification.js';
 
 const Stack = createStackNavigator();
@@ -49,7 +46,6 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="Supervisor" component={Supervisor} />
       <Drawer.Screen name="supAssign" component={supAssign} />
       <Drawer.Screen name="acceptScreen" component={AcceptScreen1} />
-      <Drawer.Screen name="acceptScreenTwo" component={AcceptScreen2} />
       <Drawer.Screen name="verification" component={verification} />
     </Drawer.Navigator>
   );

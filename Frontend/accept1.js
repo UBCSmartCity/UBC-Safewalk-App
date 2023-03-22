@@ -28,15 +28,15 @@ export default function App({ navigation }) {
       <View style={styles.map}><Text>MAP GOES HERE</Text></View>
 
       <View style={styles.foot_cont}>
-        <View>
+        <View style={styles.distContainer}>
           <Text>Pickup Address</Text>
-          <View>
-            <Text>1.4km</Text>
+          <View style={styles.distButton}>
+            <Text style={{ color: 'rgba(255, 102, 0, 1)' }}>1.4km</Text>
           </View>
         </View>
-        <Text>Start Location: </Text>
+        <Text style={{ fontWeight: 'bold', paddingBottom:10}}><Text style={{ color: '#2FA94E', fontWeight: 'bold' }}>{'\u29BF'}</Text>  Start Location: </Text>
         <Text>Dropoff Address: </Text>
-        <Text>End Location: </Text>
+        <Text style={{ fontWeight: 'bold', paddingBottom:10, paddingTop:10}}><Text style={{ color: '#FF6600' }}>{'\u29BF'}</Text>  End Location: </Text>
         <Text>Request Time</Text>
         <Text>20:45</Text>
         {!accepted ?
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: 'white',
     width: '100%',
-    padding: 10,
-    borderRadius: 10
+    padding: 20,
+    borderRadius: 10,
   },
   accepteButton: {
     alignSelf: 'center',
@@ -99,5 +99,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: '100%'
+  },
+  distButton: {
+    marginLeft: 'auto',
+    padding: 10,
+    borderRadius: 5,
+    borderStyle: 'none',
+    backgroundColor: 'rgba(255, 102, 0, 0.15)',
+  },
+  distContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'baseline',
   }
+
 });
