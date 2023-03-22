@@ -45,7 +45,7 @@ export default function App({ navigation }) {
           </TouchableOpacity>
           :
           <>
-            <Text>Are you ok? What's the delay?</Text>
+            <Text style={{paddingTop:10, paddingBottom:10}}>Are you ok? What's the delay?</Text>
             <View style={styles.accepted_cont}>
               <TouchableOpacity onPress={handleCancel} style={styles.accepteButton}>
                 <Text>I have an issue</Text>
