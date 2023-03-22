@@ -1,144 +1,103 @@
 import * as React from 'react';
-import {useState} from 'react';
-import { Text, View, StyleSheet, TouchableHighlight, TouchableOpacity, Modal } from 'react-native';
-import Constants from 'expo-constants';
-import {  widthPercentageToDP as wp,  heightPercentageToDP as hp} from "react-native-responsive-screen";
+import { useState } from 'react';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
+//https://blog.logrocket.com/react-native-maps-introduction/
+//link for map feature
+
 
 export default function App({ navigation }) {
-   const [modalVisible, setModalVisible] = useState(false);
-    const [modalVisible1, setModalVisible1] = useState(false);
+  const [accepted, setAccept] = useState(false);
 
-  const onPress = () => {};
+  const handleAccept = () => {
+    setAccept(true)
+  };
+
+  const handleCancel = () => {
+    setAccept(false);
+  };
+
   return (
     <View style={styles.container}>
-        
-          <View style={styles.subcontainer}>
-            <Text style={styles.paragraph}>
-                Name  : <Text style={{fontWeight: 'bold'}}> Hailey 123333</Text> 
-            </Text>
-            <Text style={styles.paragraph}>
-                Verify : <Text style={{fontWeight: 'bold'}}> KWB294 </Text>  
-            </Text>
-          </View>
-     
-     
-      <Card style={styles.mapcard}>
-        
-      </Card>
-      <Card style={styles.confirmcard}>
-          <View style={{ flexDirection: 'row'}}>
-          <Text style={styles.titleText}> Pickup Address </Text>
-          
-          <View style={{marginLeft: wp('40%') , marginTop: hp('1.5%'), width: wp('15%'), height: hp('4%'), backgroundColor: '#FF660026', borderRadius: 3}}>
-            <Text style={{textAlign: 'center', color: '#ff6600'}}>
-            1.4km
-            </Text>
-           </View>
-           </View>
-          
-          <View style={{ flexDirection: 'row'}}>
-          <View style={{marginLeft: wp('3%') , marginRight: wp('3%'), marginTop: hp('1%') , width: wp('3%'), height: hp('1.8%'), backgroundColor: '#2FA94E', borderRadius: 100}}>
-           </View>
-          <Text style={styles.locationText}> Start Location </Text>
-          </View>
-          <Text style={styles.titleText}> Dropoff Address </Text>
-          
-          <View style={{ flexDirection: 'row'}}>
-          <View style={{marginLeft: wp('3%') , marginRight: wp('3%'), marginTop: hp('1%') , width: wp('3%'), height: hp('1.8%'), backgroundColor: '#FF6600', borderRadius: 50}}>
-           </View>
-          <Text style={styles.locationText}>  End Location </Text>
-          </View>
-          <Text style={styles.timeTitle}> Request Time </Text>
-          <View style={{marginLeft: hp('4%'), width: wp('73%'), marginTop: hp('0.5%')}}>
-          <View style={{ borderBottomColor: '#EBEBEB', borderBottomWidth: StyleSheet.hairlineWidth, }}/>
-          </View>
-          
-          <Text style={styles.timeText}> 20:45 </Text>
+      <View style={styles.infocont}>
+        <Text style={{ color: 'white' }}>Name: Hailey</Text>
+        <Text style={{ color: 'white' }}>Verify: KWB294</Text>
+      </View>
 
-          <View style={{marginLeft: hp('4%'), width: wp('73%'), marginTop: hp('0.5%'), marginBottom: hp('2%')}}>
-          <View style={{ borderBottomColor: '#EBEBEB', borderBottomWidth: StyleSheet.hairlineWidth, }}/>
-          </View>
+      <View style={styles.map}><Text>MAP GOES HERE</Text></View>
 
-          <View style={{ alignItems: 'center' }}>  
-            <TouchableOpacity  onPress={() => navigation.navigate('acceptScreenTwo')}
-                style={{
-                    borderWidth:1,
-                    borderColor:'#118C07',
-                    alignItems:'center',
-                    justifyContent:'center',
-                    width:wp('80%'),
-                    height:hp('6%'),
-                    backgroundColor:'#118C07',
-                    borderRadius:10,
-                    marginTop: hp('1%'),
-                    marginBottom: hp('6%'),
-                    }}
-                >
-                <Text style = {{ color: '#FFF', fontSize: 20, marginTop: 0}}>  Accept  </Text>
-                </TouchableOpacity>
+      <View style={styles.foot_cont}>
+        <View>
+          <Text>Pickup Address</Text>
+          <View>
+            <Text>1.4km</Text>
           </View>
-      </Card>
-
-      
+        </View>
+        <Text>Start Location: </Text>
+        <Text>Dropoff Address: </Text>
+        <Text>End Location: </Text>
+        <Text>Request Time</Text>
+        <Text>20:45</Text>
+        {!accepted ?
+          <TouchableOpacity onPress={handleAccept} style={styles.accepteButton}>
+            <Text style={{ color: 'white' }}>Accept</Text>
+          </TouchableOpacity>
+          :
+          <>
+            <Text>Are you ok? What's the delay?</Text>
+            <View style={styles.accepted_cont}>
+              <TouchableOpacity onPress={handleCancel} style={styles.accepteButton}>
+                <Text>I have an issue</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.accepteButton}>
+                <Text style={{ color: 'white' }}>I have arrived</Text>
+              </TouchableOpacity>
+            </View>
+          </>
+        }
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#e6e3e3',
-    padding: hp('1.5%'),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'space-around'
   },
-  subcontainer:{
-    backgroundColor: '#03091980', 
-    width: wp('58%'), 
-    height: hp('10%'),
-    marginTop: hp('2%'), 
-    marginLeft: wp('35%'), 
-    marginRight: wp('20%'),
+  infocont: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: 'grey',
+    width: '50%',
     borderRadius: 10,
-    marginBottom: hp('4%')
-   },
-   paragraph: {
-     margin: wp('0.5%'),
-     fontSize: 14,
-     textAlign: 'center',
-     color: 'white',
-     marginTop: hp('1%')
-   },
-  mapcard:{
-    height: hp('60%'),
-    backgroundColor: '#e6e3e3',
-    elevation: 0
+    padding: 10,
   },
-  confirmcard:{
-    marginTop: hp('2%'),
-    paddingBottom: hp('2%')
-  }, 
-  titleText: {
-    fontSize: '12px',
-    color: '#555B6A',
-    marginTop: hp('2%')
+  foot_cont: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    backgroundColor: 'white',
+    width: '100%',
+    padding: 10,
+    borderRadius: 10
   },
-  locationText:{
-    fontSize: '14px'
+  accepteButton: {
+    alignSelf: 'center',
+    backgroundColor: 'green',
+    padding: 10,
+    borderRadius: 5
   },
-  timeTitle:{
-    fontSize: '10px',
-    marginTop: hp('2%'),
-    marginLeft: wp('8.5%'),
-    color: '#555B6A',
-  },
-  timeText:{
-    fontSize: '12px',
-    marginTop: hp('0.4%'),
-    marginLeft: wp('8.5%'),
-    marginBottom: hp('2%')
+  accepted_cont: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    width: '100%'
   }
 });
