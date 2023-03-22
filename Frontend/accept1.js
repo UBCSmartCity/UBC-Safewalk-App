@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import { Text, View, StyleSheet, TouchableHighlight, TouchableOpacity, Modal } from 'react-native';
 import Constants from 'expo-constants';
-
+import {  widthPercentageToDP as wp,  heightPercentageToDP as hp} from "react-native-responsive-screen";
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
@@ -32,33 +32,33 @@ export default function App({ navigation }) {
           <View style={{ flexDirection: 'row'}}>
           <Text style={styles.titleText}> Pickup Address </Text>
           
-           <View style={{marginLeft: 130 , marginTop: 15, width: 50, height: 20, backgroundColor: '#FF660026', borderRadius: 3}}>
-            <Text style={{marginLeft: 10, color: '#ff6600'}}>
+          <View style={{marginLeft: wp('40%') , marginTop: hp('1.5%'), width: wp('15%'), height: hp('4%'), backgroundColor: '#FF660026', borderRadius: 3}}>
+            <Text style={{textAlign: 'center', color: '#ff6600'}}>
             1.4km
             </Text>
            </View>
            </View>
           
           <View style={{ flexDirection: 'row'}}>
-          <View style={{marginLeft: 10 , marginRight: 10, marginTop: 2 , width: 10, height: 10, backgroundColor: '#2FA94E', borderRadius: 100}}>
+          <View style={{marginLeft: wp('3%') , marginRight: wp('3%'), marginTop: hp('1%') , width: wp('3%'), height: hp('1.8%'), backgroundColor: '#2FA94E', borderRadius: 100}}>
            </View>
           <Text style={styles.locationText}> Start Location </Text>
           </View>
           <Text style={styles.titleText}> Dropoff Address </Text>
           
           <View style={{ flexDirection: 'row'}}>
-          <View style={{marginLeft: 10 , marginRight: 10, marginTop: 6 , width: 10, height: 10, backgroundColor: '#FF6600', borderRadius: 50}}>
+          <View style={{marginLeft: wp('3%') , marginRight: wp('3%'), marginTop: hp('1%') , width: wp('3%'), height: hp('1.8%'), backgroundColor: '#FF6600', borderRadius: 50}}>
            </View>
           <Text style={styles.locationText}>  End Location </Text>
           </View>
           <Text style={styles.timeTitle}> Request Time </Text>
-          <View style={{marginLeft: 20, width: 250, marginTop: 3}}>
+          <View style={{marginLeft: hp('4%'), width: wp('73%'), marginTop: hp('0.5%')}}>
           <View style={{ borderBottomColor: '#EBEBEB', borderBottomWidth: StyleSheet.hairlineWidth, }}/>
           </View>
           
           <Text style={styles.timeText}> 20:45 </Text>
 
-          <View style={{marginLeft: 20, width: 250, marginTop: 3, marginBottom: 10}}>
+          <View style={{marginLeft: hp('4%'), width: wp('73%'), marginTop: hp('0.5%'), marginBottom: hp('2%')}}>
           <View style={{ borderBottomColor: '#EBEBEB', borderBottomWidth: StyleSheet.hairlineWidth, }}/>
           </View>
 
@@ -69,12 +69,12 @@ export default function App({ navigation }) {
                     borderColor:'#118C07',
                     alignItems:'center',
                     justifyContent:'center',
-                    width:280,
-                    height:30,
+                    width:wp('80%'),
+                    height:hp('6%'),
                     backgroundColor:'#118C07',
                     borderRadius:10,
-                    marginTop: 3,
-                    marginBottom: 30
+                    marginTop: hp('1%'),
+                    marginBottom: hp('6%'),
                     }}
                 >
                 <Text style = {{ color: '#FFF', fontSize: 20, marginTop: 0}}>  Accept  </Text>
@@ -93,70 +93,52 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#e6e3e3',
-    padding: 8,
+    padding: hp('1.5%'),
   },
   subcontainer:{
     backgroundColor: '#03091980', 
-    width: 200, 
-    height: 50,
-    marginTop: 10, 
-    marginLeft: 120, 
-    marginRight: 70,
+    width: wp('58%'), 
+    height: hp('10%'),
+    marginTop: hp('2%'), 
+    marginLeft: wp('35%'), 
+    marginRight: wp('20%'),
     borderRadius: 10,
-    marginBottom: 20
+    marginBottom: hp('4%')
    },
    paragraph: {
-     margin: 2,
+     margin: wp('0.5%'),
      fontSize: 14,
      textAlign: 'center',
      color: 'white',
-     marginTop: 5
+     marginTop: hp('1%')
    },
   mapcard:{
-    height: 400,
+    height: hp('60%'),
     backgroundColor: '#e6e3e3',
     elevation: 0
   },
   confirmcard:{
-    marginTop: 10,
-    paddingBottom: 10
+    marginTop: hp('2%'),
+    paddingBottom: hp('2%')
   }, 
   titleText: {
     fontSize: '12px',
     color: '#555B6A',
-    marginTop: 10
+    marginTop: hp('2%')
   },
   locationText:{
     fontSize: '14px'
   },
   timeTitle:{
     fontSize: '10px',
-    marginTop: 10,
-    marginLeft: 30,
+    marginTop: hp('2%'),
+    marginLeft: wp('8.5%'),
     color: '#555B6A',
   },
   timeText:{
     fontSize: '12px',
-    marginTop: 2,
-    marginLeft: 30,
-    marginBottom: 10
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-    width: 400
-  },
-  buttonContainer: {
-    alignItems: 'center'
-  },
-   confirmButton: {
-    backgroundColor: '#118C07',
-    borderRadius: 5,
-    height: 60,
-    width:150,
-    padding: 17,
-    marginTop: 360,
-    marginLeft: -165,
+    marginTop: hp('0.4%'),
+    marginLeft: wp('8.5%'),
+    marginBottom: hp('2%')
   }
 });
