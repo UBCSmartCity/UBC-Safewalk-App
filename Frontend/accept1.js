@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 //https://blog.logrocket.com/react-native-maps-introduction/
 //link for map feature

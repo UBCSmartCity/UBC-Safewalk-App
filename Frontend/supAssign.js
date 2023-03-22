@@ -9,7 +9,7 @@ import {
 } from "react-native-responsive-screen";
 
 
-function supAssign({ navigation }) {   
+function SupAssign({ navigation }) {   
   
   const [isChecked, setChecked] = useState(false);
   const [isChecked1, setChecked1] = useState(false);
@@ -141,4 +141,4 @@ function supAssign({ navigation }) {
 
   });
 
-export default supAssign; {/* TODO: add to navigation LATER */}
+export default SupAssign; {/* TODO: add to navigation LATER */}

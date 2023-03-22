@@ -8,7 +8,6 @@ import { View } from 'react-native';
 import navScreen from './navScreen.js';
 import { TouchableOpacity, Text } from 'react-native';
 
-import { useState } from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -16,9 +15,9 @@ import NavScreen from './navScreen.js';
 import StudentLogin from './studentlogin.js';
 import EmployeeLogin from './employeelogin.js';
 import Supervisor from './supervisor.js';
-import supAssign from './supAssign.js';
+import SupAssign from './supAssign.js';
 import AcceptScreen1 from './accept1.js';
-import verification from './verification.js';
+import Verification from './verification.js';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,9 +43,9 @@ const DrawerNavigator = () => {
       <Drawer.Screen name="Student" component={StudentLogin} />
       <Drawer.Screen name="Employee" component={EmployeeLogin} />
       <Drawer.Screen name="Supervisor" component={Supervisor} />
-      <Drawer.Screen name="supAssign" component={supAssign} />
+      <Drawer.Screen name="SupAssign" component={SupAssign} />
       <Drawer.Screen name="acceptScreen" component={AcceptScreen1} />
-      <Drawer.Screen name="verification" component={verification} />
+      <Drawer.Screen name="Verification" component={Verification} />
     </Drawer.Navigator>
   );
 };

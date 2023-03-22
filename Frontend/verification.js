@@ -1,7 +1,7 @@
 import {Image, StyleSheet, Text,  TouchableOpacity, Linking, View , TouchableHighlight} from 'react-native';
 import profile from './assets/blank-profile-picture.png'
 
-function verification({ navigation }) {      
+function Verification({ navigation }) {      
     const onPressMobileNumberClick = (number) => {
 
         let phoneNumber = '';
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default verification;
+export default Verification;
