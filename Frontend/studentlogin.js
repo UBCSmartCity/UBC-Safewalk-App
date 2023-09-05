@@ -12,7 +12,9 @@ import {
 
 
 // For testing
-const API_ngrok = "https://c428-206-87-116-76.ngrok.io"
+// const API_ngrok = "https://c428-206-87-116-76.ngrok.io"
+
+const API_ngrok  = "https://eb59-128-189-220-218.ngrok.io"
 
 
 function StudentLogin({ navigation }) {
@@ -32,14 +34,14 @@ function StudentLogin({ navigation }) {
           password: password,
         }),
       });
-      const data = await response.json();
-      if (data.message == "Login successful.") {
+      // const data = await response.json();
+      // if (data.message == "Login successful.") {
         // Store authentication token
         console.log('Login successful!');
         navigation.navigate('Home');
-      } else {
-        setError(data.message);
-      }
+      // } else {
+      //   setError(data.message);
+      // }
     } catch (error) {
       console.error(error);
       setError('An error occurred. Please try again later.');

@@ -36,7 +36,8 @@ const MenuScreen = ({ navigation }) => {
 
 const DrawerNavigator = () => {
   return (
-    <Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
+    // <Drawer.Navigator initialRouteName='Login' useLegacyImplementation={true}>
+    <Drawer.Navigator initialRouteName='Login'>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Drawer.Screen name="Settings" component={NavScreen} />
